@@ -30,7 +30,7 @@ export default function Navbar() {
               showNavbar ? "max-sm-translate-x-0" : "max-sm:-translate-x-32"
             }`}
           >
-            <a href="#servicos" className="px-2">
+            <a href="#servicos" className="px-2  hover:cursor-pointer">
               Serviços
             </a>
           </li>
@@ -39,7 +39,7 @@ export default function Navbar() {
               showNavbar ? "max-sm-translate-x-0" : "max-sm:-translate-x-40"
             }`}
           >
-            <a href="#projetos" className="px-2">
+            <a href="#projetos" className="px-2 hover:cursor-pointer">
               Projetos
             </a>
           </li>
@@ -48,7 +48,10 @@ export default function Navbar() {
               showNavbar ? "max-sm-translate-x-0" : "max-sm:-translate-x-52"
             }`}
           >
-            <a href="#contato" className="px-2 whitespace-nowrap">
+            <a
+              href="#contato"
+              className="px-2 whitespace-nowrap  hover:cursor-pointer"
+            >
               Contato
             </a>
           </li>
