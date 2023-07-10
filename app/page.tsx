@@ -17,8 +17,8 @@ export default function Home() {
       <Tools />
       <div className="box w-10/12 mx-auto max-md:mt-[-50px] mt-8 mb-[-40px]" />
       <Projects />
-      <article className="w-10/12 mx-auto my-10">
-        <div className="flex items-start text-2xl text-neutral-300">
+      <article className="w-10/12 mx-auto my-20">
+        <div className="flex flex-wrap items-start text-2xl text-neutral-300">
           <p className="text-5xl mr-2 mt-[2px]">&#169;</p> Jeferson Mesquita{" "}
           <small className="mt-[2px] ml-2">2023</small>{" "}
           <p className="text-2xl mr-2 mt-[2px]">|</p>
