@@ -39,10 +39,20 @@ export default function Navbar() {
               showNavbar ? "max-sm-translate-x-0" : "max-sm:-translate-x-40"
             }`}
           >
+            <a href="#ferramentas" className="px-2 hover:cursor-pointer">
+              Ferramentas
+            </a>
+          </li>
+          <li
+            className={`py-1 hover:bg-neutral-700 transition ease-in duration-300 delay-100 rounded mx-1 ${
+              showNavbar ? "max-sm-translate-x-0" : "max-sm:-translate-x-40"
+            }`}
+          >
             <a href="#projetos" className="px-2 hover:cursor-pointer">
               Projetos
             </a>
           </li>
+
           <li
             className={`py-1 hover:bg-neutral-700 transition ease-in duration-300 delay-100 rounded mx-1 ${
               showNavbar ? "max-sm-translate-x-0" : "max-sm:-translate-x-52"
