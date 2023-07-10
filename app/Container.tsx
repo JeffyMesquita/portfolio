@@ -28,7 +28,7 @@ export default function Container() {
             Meu nome é{" "}
             <strong className="text-blue-700">Jeferson Mesquita</strong>
             <p className="text-xl sm:text-2xl md:text-xl lg:text-2xl xl:text-3xl">
-              Sou Desenvolvedor Fullstack,
+              Sou Desenvolvedor Fullstack
             </p>
           </h1>
           <p className="text-base sm:text-xl md:text-base lg:text-xl xl:text-2xl lg:pt-6">
