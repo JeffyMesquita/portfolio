@@ -3,6 +3,7 @@ import ServiceCard from "@/components/ServiceCard";
 import React from "react";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
+import { SiExpo } from "react-icons/si";
 
 export function Services() {
   return (
@@ -39,6 +40,15 @@ export function Services() {
           description="utilizando a biblioteca React Native."
           linkText="Saiba mais"
           effectColor="bg-teal-400"
+        />
+
+        <ServiceCard
+          title="Expo"
+          icon={<SiExpo size={50} className="text-zinc-950" />}
+          shortDescription="Desenvolvimento Mobile"
+          description="utilizando o framework Expo."
+          linkText="Saiba mais"
+          effectColor="bg-zinc-950"
         />
 
         <ServiceCard

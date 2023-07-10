@@ -11,6 +11,7 @@ import {
   SiDocker,
   SiFastify,
 } from "react-icons/si";
+import { ToolCard } from "@/components/ToolCard";
 
 export function Tools() {
   return (
@@ -21,77 +22,65 @@ export function Tools() {
       >
         Ferramentas
       </h1>
-      <div className="flex flex-wrap gap-7 justify-center">
-        <ServiceCard
+      <p className="pt-6 text-neutral-300">
+        Os produtos, aplicativos e serviços que utilizo diariamente para o
+        trabalho e vida pessoal.
+      </p>
+      <div className="mt-20 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-10">
+        <ToolCard
           title="Vscode"
-          icon={<TbBrandVscode size={50} className="text-blue-600" />}
-          shortDescription="Editor de código"
-          description="utilizando o editor de código Vscode."
-          linkText="Saiba mais"
-          effectColor="bg-blue-600"
+          description="Editor de código"
+          image="/vscode.png"
+          link="https://code.visualstudio.com/"
         />
 
-        <ServiceCard
+        <ToolCard
           title="Figma"
-          icon={<SiFigma size={50} className="text-purple-600" />}
-          shortDescription="Prototipação"
-          description="utilizando a ferramenta Figma."
-          linkText="Saiba mais"
-          effectColor="bg-purple-600"
+          description="Prototipação"
+          image="/figma.png"
+          link="https://www.figma.com/"
         />
 
-        <ServiceCard
+        <ToolCard
           title="Tailwindcss"
-          icon={<SiTailwindcss size={50} className="text-cyan-400" />}
-          shortDescription="Estilização"
-          description="utilizando a biblioteca Tailwindcss."
-          linkText="Saiba mais"
-          effectColor="bg-cyan-400"
+          description="Estilização"
+          image="/tailwindcss.png"
+          link="https://tailwindcss.com/"
         />
 
-        <ServiceCard
+        <ToolCard
           title="Chakra UI"
-          icon={<SiChakraui size={50} className="text-green-400" />}
-          shortDescription="Estilização"
-          description="utilizando a biblioteca Chakra UI."
-          linkText="Saiba mais"
-          effectColor="bg-green-400"
+          description="Estilização"
+          image="/chakraui.png"
+          link="https://chakra-ui.com/"
         />
 
-        <ServiceCard
+        <ToolCard
           title="Styled Components"
-          icon={<SiStyledcomponents size={50} className="text-pink-600" />}
-          shortDescription="Estilização"
-          description="utilizando a biblioteca Styled Components."
-          linkText="Saiba mais"
-          effectColor="bg-pink-600"
+          description="Estilização"
+          image="/styledcomponents.png"
+          link="https://styled-components.com/"
         />
 
-        <ServiceCard
+        <ToolCard
           title="PostgreSQL"
-          icon={<SiPostgresql size={50} className="text-indigo-700" />}
-          shortDescription="Desenvolvimento Web"
-          description="utilizando o framework NextJs."
-          linkText="Saiba mais"
-          effectColor="bg-indigo-700"
+          description="Banco de dados"
+          image="/postgresql.png"
+          link="https://www.postgresql.org/"
         />
 
-        <ServiceCard
+        <ToolCard
           title="Docker"
-          icon={<SiDocker size={50} className="text-blue-800" />}
-          shortDescription="Containerização"
-          description="utilizando a ferramenta Docker."
-          linkText="Saiba mais"
-          effectColor="bg-blue-800"
+          description="Containerização"
+          image="/docker.png"
+          link="https://www.docker.com/"
         />
 
-        <ServiceCard
+        <ToolCard
           title="Fastify"
-          icon={<SiFastify size={50} className="text-blue-500" />}
-          shortDescription="Desenvolvimento Backend"
-          description="utilizando o framework Fastify."
-          linkText="Saiba mais"
-          effectColor="bg-blue-500"
+          description="Desenvolvimento Backend"
+          image="/fastify.png"
+          link="https://www.fastify.io/"
         />
       </div>
     </section>

@@ -11,11 +11,11 @@ export default function Home() {
         <Navbar />
       </div>
       <Container />
-      <div className="box w-10/12 mx-auto max-md:mt-[-50px] mt-8 mb-[-20px]" />
+      <div className="box w-10/12 mx-auto max-md:mt-[-50px] mt-8 mb-[-40px]" />
       <Services />
-      <div className="box w-10/12 mx-auto max-md:mt-[-50px] mt-8 mb-[-20px]" />
+      <div className="box w-10/12 mx-auto max-md:mt-[-50px] mt-8 mb-[-40px]" />
       <Tools />
-      <div className="box w-10/12 mx-auto max-md:mt-[-50px] mt-8 mb-[-20px]" />
+      <div className="box w-10/12 mx-auto max-md:mt-[-50px] mt-8 mb-[-40px]" />
       <Projects />
     </main>
   );
