@@ -12,7 +12,7 @@ import {
   SiFastify,
 } from "react-icons/si";
 
-export default function Tools() {
+export function Tools() {
   return (
     <section className="w-10/12 mx-auto">
       <h1

@@ -4,7 +4,7 @@ import React from "react";
 import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
 import { GrInstagram } from "react-icons/gr";
 
-export default function Container() {
+export function Container() {
   return (
     <section className="lg:pt-16 pt-4 relative w-10/12 mx-auto">
       <div className="md:flex items-center justify-between flex-row-reverse">

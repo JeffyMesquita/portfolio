@@ -3,7 +3,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiCloseLine } from "react-icons/ri";
 
-export default function Navbar() {
+export function Navbar() {
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
 
   return (

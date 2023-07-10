@@ -4,7 +4,7 @@ import React from "react";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
 
-export default function Services() {
+export function Services() {
   return (
     <section className="w-10/12 mx-auto">
       <h1
