@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     google: "google-site-verification=878787878",
   },
   robots: {
-    index: false,
+    index: true,
     nocache: true,
   },
 };
