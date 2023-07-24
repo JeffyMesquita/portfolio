@@ -1,3 +1,4 @@
+"use client";
 import { ScrollRevealComp } from "@/components/ScrollReveal";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Metadata } from "next";
