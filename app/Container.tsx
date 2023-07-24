@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import React from "react";
 import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
 import { GrInstagram } from "react-icons/gr";
 
@@ -41,6 +40,7 @@ export function Container() {
                   href="https://github.com/JeffyMesquita"
                   className="hover:opacity-100 opacity-75 transition ease-in duration-150  hover:text-blue-600"
                   target="_blank"
+                  aria-label="Github"
                 >
                   <AiOutlineGithub size={24} />
                 </a>
@@ -50,6 +50,7 @@ export function Container() {
                   href="https://www.linkedin.com/in/jeferson-mesquita-763bb6b8/"
                   className="hover:opacity-100 opacity-75 transition ease-in duration-150  hover:text-blue-600"
                   target="_blank"
+                  aria-label="Linkedin"
                 >
                   <AiOutlineLinkedin size={24} />
                 </a>
@@ -59,6 +60,7 @@ export function Container() {
                   href="https://www.instagram.com/jeferson.mesquita/"
                   className="hover:opacity-100 opacity-75 transition ease-in duration-150 hover:text-blue-600"
                   target="_blank"
+                  aria-label="Instagram"
                 >
                   <GrInstagram size={24} />
                 </a>
