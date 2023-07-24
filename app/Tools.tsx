@@ -1,16 +1,4 @@
 "use client";
-import ServiceCard from "@/components/ServiceCard";
-import React from "react";
-import { TbBrandVscode } from "react-icons/tb";
-import {
-  SiPostgresql,
-  SiTailwindcss,
-  SiChakraui,
-  SiFigma,
-  SiStyledcomponents,
-  SiDocker,
-  SiFastify,
-} from "react-icons/si";
 import { ToolCard } from "@/components/ToolCard";
 
 export function Tools() {
@@ -28,6 +16,7 @@ export function Tools() {
       </p>
       <div className="mt-20 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-10">
         <ToolCard
+          className="tools-1"
           title="Vscode"
           description="Editor de código"
           image="/vscode.png"
@@ -35,6 +24,7 @@ export function Tools() {
         />
 
         <ToolCard
+          className="tools-2"
           title="Figma"
           description="Prototipação"
           image="/figma.png"
@@ -42,6 +32,7 @@ export function Tools() {
         />
 
         <ToolCard
+          className="tools-3"
           title="Tailwindcss"
           description="Estilização"
           image="/tailwindcss.png"
@@ -49,6 +40,7 @@ export function Tools() {
         />
 
         <ToolCard
+          className="tools-4"
           title="Chakra UI"
           description="Estilização"
           image="/chakraui.png"
@@ -56,6 +48,7 @@ export function Tools() {
         />
 
         <ToolCard
+          className="tools-5"
           title="Styled Components"
           description="Estilização"
           image="/styledcomponents.png"
@@ -63,6 +56,7 @@ export function Tools() {
         />
 
         <ToolCard
+          className="tools-6"
           title="PostgreSQL"
           description="Banco de dados"
           image="/postgresql.png"
@@ -70,6 +64,7 @@ export function Tools() {
         />
 
         <ToolCard
+          className="tools-7"
           title="Docker"
           description="Containerização"
           image="/docker.png"
@@ -77,6 +72,7 @@ export function Tools() {
         />
 
         <ToolCard
+          className="tools-8"
           title="Fastify"
           description="Desenvolvimento Backend"
           image="/fastify.png"

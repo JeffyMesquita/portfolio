@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export function Projects() {
   const [selectedId, setSelectedId] = useState<boolean>(false);
   return (
-    <div className="w-10/12 mx-auto">
+    <div className="w-10/12 mx-auto projects">
       <h1 className="md:text-4xl text-3xl lg:text-5xl font-bold">Projetos</h1>
       <p className="pt-6 text-neutral-300">
         Ao longo dos anos, adquiri experiência no design e desenvolvimento de

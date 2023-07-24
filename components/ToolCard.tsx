@@ -1,18 +1,28 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
 
 export interface ToolCardProps {
   title: string;
   description: string;
   link: string;
   image: string;
+  className?: string;
 }
 
-export function ToolCard({ title, description, link, image }: ToolCardProps) {
+export function ToolCard({
+  title,
+  description,
+  link,
+  image,
+  className,
+}: ToolCardProps) {
   return (
     <a
       href={link}
-      className="border-[0.5px] border-neutral-500 block rounded-2xl my-6"
+      className={cn(
+        "border-[0.5px] border-neutral-500 block rounded-2xl my-6",
+        className
+      )}
       target="_blank"
     >
       <div className="py-8 bg-neutral-800 w-full text-center rounded-t-2xl">

@@ -5,7 +5,7 @@ import { GrInstagram } from "react-icons/gr";
 
 export function Container() {
   return (
-    <section className="lg:pt-16 pt-4 relative w-10/12 mx-auto">
+    <section className="lg:pt-16 pt-4 relative w-10/12 mx-auto about">
       <div className="md:flex items-center justify-between flex-row-reverse">
         <div className="flex justify-end items-end max-md:pt-4">
           <div className="relative">

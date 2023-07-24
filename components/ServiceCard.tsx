@@ -1,6 +1,6 @@
 "use client";
-import React, { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
 export interface ServiceCardProps {
   title: string;
@@ -9,6 +9,7 @@ export interface ServiceCardProps {
   description: string;
   linkText: string;
   effectColor: string;
+  className?: string;
 }
 
 export default function ServiceCard({
@@ -18,9 +19,15 @@ export default function ServiceCard({
   description,
   linkText,
   effectColor,
+  className,
 }: ServiceCardProps) {
   return (
-    <div className="group d p-5 relative overflow-hidden mt-5 max-sm:w-full sm:min-w-[440px]">
+    <div
+      className={cn(
+        "group d p-5 relative overflow-hidden mt-5 max-sm:w-full sm:min-w-[440px]",
+        className
+      )}
+    >
       <h1 className="text-center mt-5 group-hover:animate-bounce">{title}</h1>
       <div className="flex justify-center mt-4 group-hover:animate-pulse">
         {icon}

@@ -1,9 +1,8 @@
 "use client";
 import ServiceCard from "@/components/ServiceCard";
-import React from "react";
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { TbBrandNextjs } from "react-icons/tb";
+import { FaNodeJs, FaReact } from "react-icons/fa";
 import { SiExpo } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 
 export function Services() {
   return (
@@ -16,6 +15,7 @@ export function Services() {
       </h1>
       <div className="flex flex-wrap gap-7 justify-center">
         <ServiceCard
+          className="services-1"
           title="ReactJs"
           icon={<FaReact size={50} className="text-sky-600" />}
           shortDescription="Desenvolvimento Web"
@@ -25,6 +25,7 @@ export function Services() {
         />
 
         <ServiceCard
+          className="services-2"
           title="NextJs"
           icon={<TbBrandNextjs size={50} className="text-zinc-600" />}
           shortDescription="Desenvolvimento Web"
@@ -34,6 +35,7 @@ export function Services() {
         />
 
         <ServiceCard
+          className="services-3"
           title="React Native"
           icon={<FaReact size={50} className="text-teal-400" />}
           shortDescription="Desenvolvimento Mobile"
@@ -43,6 +45,7 @@ export function Services() {
         />
 
         <ServiceCard
+          className="services-4"
           title="Expo"
           icon={<SiExpo size={50} className="text-zinc-950" />}
           shortDescription="Desenvolvimento Mobile"
@@ -52,6 +55,7 @@ export function Services() {
         />
 
         <ServiceCard
+          className="services-5"
           title="NodeJs"
           icon={<FaNodeJs size={50} className="text-green-400" />}
           shortDescription="Desenvolvimento Backend"
