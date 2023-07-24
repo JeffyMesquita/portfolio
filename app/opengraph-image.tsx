@@ -9,8 +9,8 @@ export const alt = "Jeferson Mesquita, meu portfólio ";
 export const contentType = "image/png";
 
 // Font
-const interSemiBold = fetch(
-  new URL("./Inter-SemiBold.ttf", import.meta.url)
+const spaceMonoBold = fetch(
+  new URL("./SpaceMono-Bold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 // Image generation
@@ -40,7 +40,7 @@ export default async function Image() {
       fonts: [
         {
           name: "Inter",
-          data: await interSemiBold,
+          data: await spaceMonoBold,
           style: "normal",
           weight: 400,
         },
