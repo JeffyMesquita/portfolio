@@ -1,5 +1,3 @@
-"use client";
-import { ScrollRevealComp } from "@/components/ScrollReveal";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Container } from "./Container";
 import { Navbar } from "./Navbar";
@@ -51,7 +49,6 @@ export default function Home() {
         </div>
       </article>
       <ScrollToTop />
-      <ScrollRevealComp />
     </main>
   );
 }
