@@ -1,3 +1,4 @@
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { Metadata } from "next";
 import { Container } from "./Container";
 import { Navbar } from "./Navbar";
@@ -53,6 +54,7 @@ export default function Home() {
           </a>
         </div>
       </article>
+      <ScrollToTop />
     </main>
   );
 }
