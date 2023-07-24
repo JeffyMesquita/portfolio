@@ -24,6 +24,9 @@ export default async function Image() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          backgroundImage: "url('/og-image.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         Jeferson Mesquita, meu portfólio
