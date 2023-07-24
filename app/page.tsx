@@ -1,17 +1,11 @@
 "use client";
 import { ScrollRevealComp } from "@/components/ScrollReveal";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { Metadata } from "next";
 import { Container } from "./Container";
 import { Navbar } from "./Navbar";
 import Projects from "./Projects";
 import { Services } from "./Services";
 import { Tools } from "./Tools";
-
-export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "This is my personal portfolio",
-};
 
 export default function Home() {
   return (
