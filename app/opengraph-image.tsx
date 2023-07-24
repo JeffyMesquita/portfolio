@@ -9,9 +9,6 @@ export const alt = "Jeferson Mesquita, meu portfólio ";
 export const contentType = "image/png";
 
 // Font
-const spaceMonoBold = fetch(
-  new URL("./SpaceMono-Bold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
 
 // Image generation
 export default async function Image() {
@@ -37,14 +34,6 @@ export default async function Image() {
       // For convenience, we can re-use the exported opengraph-image
       // size config to also set the ImageResponse's width and height.
       ...size,
-      fonts: [
-        {
-          name: "Inter",
-          data: await spaceMonoBold,
-          style: "normal",
-          weight: 400,
-        },
-      ],
     }
   );
 }
