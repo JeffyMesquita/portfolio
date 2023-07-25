@@ -1,9 +1,12 @@
+"use client";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Container } from "./Container";
 import { Navbar } from "./Navbar";
 import Projects from "./Projects";
 import { Services } from "./Services";
 import { Tools } from "./Tools";
+
+import Script from "next/script";
 
 export default function Home() {
   return (
@@ -49,6 +52,8 @@ export default function Home() {
         </div>
       </article>
       <ScrollToTop />
+      <Script src="https://unpkg.com/scrollreveal"></Script>
+      <Script src="/scrollReveal.js"></Script>
     </main>
   );
 }
