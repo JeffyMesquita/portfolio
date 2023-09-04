@@ -1,12 +1,11 @@
-"use client";
 import Image from "next/image";
 import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
 import { GrInstagram } from "react-icons/gr";
 
 export function Container() {
   return (
-    <section className="lg:pt-16 pt-4 relative w-10/12 mx-auto about">
-      <div className="md:flex items-center justify-between flex-row-reverse">
+    <section className="lg:pt-16 pt-4 relative w-10/12 mx-auto whoiam">
+      <div className="flex items-center justify-between flex-row-reverse">
         <div className="flex justify-end items-end max-md:pt-4">
           <div className="relative">
             <Image
@@ -15,12 +14,16 @@ export function Container() {
               height={200}
               src="/me.png"
               alt="Hero Image"
+              loading="lazy"
             />
-            <div className="w-[110%] overflow-hidden h-[75%] z-[-1] top-[5%] -left-[2%] rounded-full bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500 absolute border bottom-4 border-blue-800"></div>
+            <div className="w-[100%] overflow-hidden h-[70%] z-[-1] top-[5%] -left-0 rounded-full bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500 absolute border bottom-4 border-blue-800"></div>
           </div>
         </div>
         <div className="p-4 pl-0 mt-5 sm:mt-20">
-          <p className="text-xl sm:text-2xl md:text-xl lg:text-2xl xl:text-3xl">
+          <h4 className="invisible h-0.5 -mt-8" id="quemsou">
+            Quem sou?
+          </h4>
+          <p className="text-xl mt-8 sm:text-2xl md:text-xl lg:text-2xl xl:text-3xl">
             Hello!
           </p>
           <h1>
@@ -47,7 +50,7 @@ export function Container() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/jeferson-mesquita-763bb6b8/"
+                  href="https://www.linkedin.com/in/jeffymesquita/"
                   className="hover:opacity-100 opacity-75 transition ease-in duration-150  hover:text-blue-600"
                   target="_blank"
                   aria-label="Linkedin"

@@ -33,7 +33,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt=br">
-      <body className={space_mono.className}>{children}</body>
+      <body
+        className={`${space_mono.className} w-screen h-screen scrollbar-hide`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

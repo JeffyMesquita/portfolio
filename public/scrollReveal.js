@@ -6,8 +6,14 @@ ScrollReveal({
   interval: 250,
 });
 
-ScrollReveal().reveal(".about", {
+ScrollReveal().reveal(".whoiam", {
   origin: "right",
+  distance: "100px",
+  easing: "ease-in-out",
+});
+
+ScrollReveal().reveal(".about", {
+  origin: "left",
   distance: "100px",
   easing: "ease-in-out",
 });

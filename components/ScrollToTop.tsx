@@ -16,7 +16,7 @@ export function ScrollToTop() {
   }
 
   function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
 
   if (typeof window !== "undefined") {
@@ -42,7 +42,7 @@ export function ScrollToTop() {
             x: 100,
             transition: { duration: 0.5 },
           }}
-          className="fixed bottom-4 right-4 p-2 rounded-full bg-blue-800 text-white border-2 border-blue-950 hover:bg-blue-300 hover:text-blue-800 transition duration-300 shadow shadow-white/80"
+          className="fixed bottom-6 right-6 p-2 rounded-full bg-blue-800 text-white border-2 border-blue-950 hover:bg-blue-300 hover:text-blue-800 transition duration-300 shadow shadow-white/80"
           onClick={scrollToTop}
         >
           <ArrowUpFromDot

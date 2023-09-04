@@ -6,7 +6,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 
 export function Services() {
   return (
-    <section className="w-10/12 mx-auto">
+    <section className="w-10/12 mx-auto mt-14 max-sm:mt-8 max-md:mt-12">
       <h1
         id="servicos"
         className="md:text-4xl text-3xl lg:text-5xl font-bold mb-10"
