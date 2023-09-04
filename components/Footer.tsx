@@ -130,7 +130,7 @@ export function Footer() {
         </ul>
       </div>
       <p className="text-xs text-center text-neutral-500">
-        &copy; 2022. Jeferson Mesquita. All rights reserved.
+        &copy; 2023. Jeferson Mesquita. All rights reserved.
       </p>
     </footer>
   );
