@@ -21,6 +21,7 @@ export function Projects() {
         </p>
         <div className="flex flex-wrap gap-7 justify-center mt-10">
           <ProjectCard
+            className="projects-1"
             title="Test Frontend - ImobPower"
             shortDescription="Um teste de frontend - ReactJS"
             moreDescription="Este projeto foi desenvolvido para um teste de frontend, onde o objetivo era criar uma aplicação que consumisse uma API e exibisse os dados em uma de Pokémon's, que proporcionou a minha vaga na empresa ImobPower."
@@ -30,6 +31,7 @@ export function Projects() {
             deployLink="https://teste-frontend-imobpower.vercel.app/"
           />
           <ProjectCard
+            className="projects-2"
             title="Test Frontend - Plin"
             shortDescription="Um teste de frontend - ReactJS e NextJS"
             moreDescription="Este projeto foi desenvolvido para um teste de frontend, onde o objetivo era criar uma aplicação que consumisse uma Api de clima, Api pra consulta de CEP e um formulário, Fiz este teste para empresa Plin."

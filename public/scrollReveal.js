@@ -127,3 +127,23 @@ ScrollReveal().reveal(".tools-8", {
     z: -20,
   },
 });
+
+ScrollReveal().reveal(".projects-1", {
+  origin: "left",
+  distance: "100px",
+  easing: "ease-in-out",
+  rotate: {
+    x: 20,
+    z: 20,
+  },
+});
+
+ScrollReveal().reveal(".projects-2", {
+  origin: "right",
+  distance: "100px",
+  easing: "ease-in-out",
+  rotate: {
+    x: 20,
+    z: -20,
+  },
+});

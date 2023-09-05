@@ -18,6 +18,7 @@ export interface ProjectCardProps {
   repositoryLink: string;
   deployLink: string;
   image?: string;
+  className?: string;
 }
 
 const categories = [
@@ -49,14 +50,17 @@ export function ProjectCard({
   repositoryLink,
   deployLink,
   image,
+  className,
 }: ProjectCardProps) {
   const [showMore, setShowMore] = useState<boolean>(false);
   const categoryData = categories.find((cat) => cat.name === category);
 
   return (
     <div
-      className="group flex flex-col justify-between relative min-h-[250px]
-    lg:max-w-[450px] md:max-w-[700px] sm:w-full overflow-hidden rounded-lg border border-neutral-50/40 p-4 sm:p-6 lg:p-8 hover:shadow-xl hover:shadow-sky-800 hover:border-sky-600 transition duration-300"
+      className={cn(
+        "group flex flex-col justify-between relative min-h-[250px] lg:max-w-[450px] md:max-w-[700px] sm:w-full overflow-hidden rounded-lg border border-neutral-50/40 p-4 sm:p-6 lg:p-8 hover:shadow-xl hover:shadow-sky-800 hover:border-sky-600 transition duration-300",
+        className
+      )}
     >
       <div className="w-full flex flex-col gap-2">
         <span className="absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-blue-400 via-sky-600 to-indigo-900" />
