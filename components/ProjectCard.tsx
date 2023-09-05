@@ -56,7 +56,7 @@ export function ProjectCard({
   return (
     <div
       className="group flex flex-col justify-between relative min-h-[250px]
-    xl:min-w-[450px] md:min-w-[600px] max-sm:w-full overflow-hidden rounded-lg border border-neutral-50/40 p-4 sm:p-6 lg:p-8 hover:shadow-xl hover:shadow-sky-800 hover:border-sky-600 transition duration-300"
+    lg:max-w-[450px] md:max-w-[700px] sm:w-full overflow-hidden rounded-lg border border-neutral-50/40 p-4 sm:p-6 lg:p-8 hover:shadow-xl hover:shadow-sky-800 hover:border-sky-600 transition duration-300"
     >
       <div className="w-full flex flex-col gap-2">
         <span className="absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-blue-400 via-sky-600 to-indigo-900" />
@@ -67,7 +67,8 @@ export function ProjectCard({
               width={192}
               height={128}
               src={image || "/figma.png"}
-              className="h-32 w-48 rounded-lg object-cover shadow-sm border border-neutral-50/40 group-hover:border-sky-600 transition duration-300"
+              className="h-32 w-48 rounded-lg object-cover shadow-sm border-2 border-neutral-50/40 group-hover:border-sky-600 transition duration-300"
+              loading="lazy"
             />
           </div>
           <div className="text-right w-full">
@@ -96,7 +97,7 @@ export function ProjectCard({
         </div>
       </div>
 
-      <div className="flex w-full flex-col mt-2">
+      <div className="flex w-full flex-col mt-2 mb-8">
         <div className="flex justify-end items-center gap-2">
           <p className="text-3xs text-neutral-600">
             {!showMore ? "mostrar mais" : "mostrar menos"}
@@ -115,7 +116,7 @@ export function ProjectCard({
             "flex flex-col items-end gap-2 text-right transition-all duration-300 mt-2",
             {
               "h-0": !showMore,
-              "h-20 max-sm:h-52": showMore,
+              "h-52 sm:h-20": showMore,
             }
           )}
         >
@@ -131,6 +132,7 @@ export function ProjectCard({
                 "h-20 visible": showMore,
               }
             )}
+            loading="lazy"
           />
           <p
             className={cn(

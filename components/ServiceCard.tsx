@@ -8,6 +8,7 @@ export interface ServiceCardProps {
   shortDescription: string;
   description: string;
   linkText: string;
+  linkHref?: string;
   effectColor: string;
   className?: string;
 }
@@ -18,6 +19,7 @@ export default function ServiceCard({
   shortDescription,
   description,
   linkText,
+  linkHref = "#",
   effectColor,
   className,
 }: ServiceCardProps) {
@@ -39,7 +41,8 @@ export default function ServiceCard({
       </p>
       <p className="text-center mt-10 mb-7">
         <a
-          href="#"
+          target="_blank"
+          href={linkHref}
           className="px-4 py-2 rounded-sm border-[0.5px] border-sky-600 shadow-md text-gray-400 hover:text-sky-700 transition ease-in duration-300 delay-100 hover:cursor-pointer"
         >
           {linkText}

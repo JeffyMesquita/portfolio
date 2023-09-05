@@ -22,6 +22,7 @@ export function Services() {
             icon={<FaReact size={50} className="text-sky-600" />}
             shortDescription="Desenvolvimento Web"
             description="utilizando a biblioteca ReactJs."
+            linkHref="https://pt-br.reactjs.org/"
             linkText="Saiba mais"
             effectColor="bg-sky-600"
           />
@@ -31,6 +32,7 @@ export function Services() {
             icon={<TbBrandNextjs size={50} className="text-zinc-600" />}
             shortDescription="Desenvolvimento Web"
             description="utilizando o framework NextJs."
+            linkHref="https://nextjs.org/"
             linkText="Saiba mais"
             effectColor="bg-zinc-600"
           />
@@ -40,6 +42,7 @@ export function Services() {
             icon={<FaReact size={50} className="text-teal-400" />}
             shortDescription="Desenvolvimento Mobile"
             description="utilizando a biblioteca React Native."
+            linkHref="https://reactnative.dev/"
             linkText="Saiba mais"
             effectColor="bg-teal-400"
           />
@@ -49,6 +52,7 @@ export function Services() {
             icon={<SiExpo size={50} className="text-zinc-950" />}
             shortDescription="Desenvolvimento Mobile"
             description="utilizando o framework Expo."
+            linkHref="https://expo.dev/"
             linkText="Saiba mais"
             effectColor="bg-zinc-950"
           />
@@ -58,6 +62,7 @@ export function Services() {
             icon={<FaNodeJs size={50} className="text-green-400" />}
             shortDescription="Desenvolvimento Backend"
             description="utilizando o runtime NodeJs."
+            linkHref="https://nodejs.org/en/"
             linkText="Saiba mais"
             effectColor="bg-green-400"
           />
