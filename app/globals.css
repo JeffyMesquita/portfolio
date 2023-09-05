@@ -37,15 +37,11 @@ body {
 }
 
 .scrollbar-hide:hover::-webkit-scrollbar-thumb:vertical {
-  @apply bg-neutral-600;
+  @apply bg-neutral-600 rounded-md;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
   @apply h-1.5 w-1.5 rounded-md bg-transparent;
-}
-
-.scrollbar-hide::-webkit-scrollbar-thumb:vertical {
-  @apply h-[1px] w-[1px] rounded-md bg-transparent;
 }
 
 .scrollbar-hide:hover::-webkit-scrollbar-thumb:horizontal {
