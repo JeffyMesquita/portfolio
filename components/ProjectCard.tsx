@@ -10,6 +10,7 @@ import {
   LayersIcon,
 } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export interface ProjectCardProps {
@@ -166,16 +167,17 @@ export function ProjectCard({
         <div className="flex flex-col">
           <dt className="text-sm font-medium text-neutral-200">Repositório</dt>
           {repositoryType === '@PUBLIC' && repositoryLink ? (
-            <a
+            <Link
               href={repositoryLink}
               target="_blank"
               className="text-xs text-neutral-400 hover:font-semibold hover:text-blue-700"
+              prefetch
             >
               <dd className="flex items-end gap-2">
                 <Computer size={16} />
                 Link
               </dd>
-            </a>
+            </Link>
           ) : (
             <dd className="flex items-end gap-2">
               <Computer size={16} />
@@ -186,16 +188,17 @@ export function ProjectCard({
 
         <div className="flex flex-col">
           <dt className="text-sm font-medium text-neutral-200">Deploy</dt>
-          <a
+          <Link
             href={deployLink || '#'}
             target={deployLink ? '_blank' : '_self'}
             className="text-xs text-neutral-400 hover:font-semibold hover:text-blue-700"
+            prefetch
           >
             <dd className="flex items-end gap-2">
               <Globe2 size={16} />
               {deployLink ? 'Link' : '  ---  '}
             </dd>
-          </a>
+          </Link>
         </div>
       </dl>
     </div>
