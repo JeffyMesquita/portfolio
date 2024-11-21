@@ -168,6 +168,8 @@ export function ProjectCard({
           <dt className="text-sm font-medium text-neutral-200">Repositório</dt>
           {repositoryType === '@PUBLIC' && repositoryLink ? (
             <Link
+              title="Repositório"
+              aria-label="Repositório"
               href={repositoryLink}
               target="_blank"
               className="text-xs text-neutral-400 hover:font-semibold hover:text-blue-700"
@@ -189,6 +191,8 @@ export function ProjectCard({
         <div className="flex flex-col">
           <dt className="text-sm font-medium text-neutral-200">Deploy</dt>
           <Link
+            title={deployLink ? 'Deploy' : '---'}
+            aria-label={deployLink ? 'Deploy' : '---'}
             href={deployLink || '#'}
             target={deployLink ? '_blank' : '_self'}
             className="text-xs text-neutral-400 hover:font-semibold hover:text-blue-700"
