@@ -18,8 +18,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "cv11", "salt", "ss01", "ss02", "cv01", "cv02", "cv03",
-    "cv04", "cv05", "cv06", "cv09", "cv10";
+  font-feature-settings: 'cv11', 'salt', 'ss01', 'ss02', 'cv01', 'cv02', 'cv03',
+    'cv04', 'cv05', 'cv06', 'cv09', 'cv10';
 }
 
 .d {
@@ -37,7 +37,7 @@ body {
 }
 
 .scrollbar-hide:hover::-webkit-scrollbar-thumb:vertical {
-  @apply bg-neutral-600 rounded-md;
+  @apply rounded-md bg-neutral-600;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

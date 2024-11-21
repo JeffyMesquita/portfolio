@@ -1,21 +1,24 @@
-"use client";
-import { cn } from "@/lib/utils";
+'use client';
+import { RepositoryType, StackType } from '@/constants/projects';
+import { cn } from '@/lib/utils';
 import {
   Computer,
   Globe2,
   MonitorCheck,
   Server,
   Smartphone,
-} from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
+  LayersIcon,
+} from 'lucide-react';
+import Image from 'next/image';
+import { useState } from 'react';
 
 export interface ProjectCardProps {
   title: string;
-  category: "web" | "mobile" | "backend";
+  category: StackType;
   shortDescription: string;
   moreDescription: string;
-  repositoryLink: string;
+  repositoryType: RepositoryType;
+  repositoryLink: string | null;
   deployLink: string;
   image?: string;
   className?: string;
@@ -23,31 +26,38 @@ export interface ProjectCardProps {
 
 const categories = [
   {
-    name: "web",
-    titleName: "Frontend",
-    textColor: "text-blue-600",
+    name: '@FRONTEND',
+    titleName: 'Frontend',
+    textColor: 'text-blue-600',
     icon: <MonitorCheck size={20} className="text-blue-600" />,
   },
   {
-    name: "mobile",
-    titleName: "Mobile",
-    textColor: "text-teal-400",
+    name: '@MOBILE',
+    titleName: 'Mobile',
+    textColor: 'text-teal-400',
     icon: <Smartphone size={20} className="text-teal-400" />,
   },
   {
-    name: "backend",
-    titleName: "Backend",
-    textColor: "text-green-400",
+    name: '@BACKEND',
+    titleName: 'Backend',
+    textColor: 'text-green-400',
     icon: <Server size={20} className="text-green-400" />,
+  },
+  {
+    name: '@FULLSTACK',
+    titleName: 'Fullstack',
+    textColor: 'text-purple-400',
+    icon: <LayersIcon size={20} className="text-purple-400" />,
   },
 ];
 
 export function ProjectCard({
-  title = "A simple project",
-  category = "web",
-  shortDescription = "A short description about the project Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  moreDescription = "A more detailed description about the project, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-  repositoryLink,
+  title = 'A simple project',
+  category = '@FRONTEND',
+  shortDescription = 'A short description about the project Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+  moreDescription = 'A more detailed description about the project, Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+  repositoryType,
+  repositoryLink = '/',
   deployLink,
   image,
   className,
@@ -58,11 +68,11 @@ export function ProjectCard({
   return (
     <div
       className={cn(
-        "group flex flex-col justify-between relative min-h-[250px] lg:max-w-[450px] md:max-w-[700px] sm:w-full overflow-hidden rounded-lg border border-neutral-50/40 p-4 sm:p-6 lg:p-8 hover:shadow-xl hover:shadow-sky-800 hover:border-sky-600 transition duration-300",
-        className
+        'group relative flex min-h-[250px] flex-col justify-between overflow-hidden rounded-lg border border-neutral-50/40 p-4 transition duration-300 hover:border-sky-600 hover:shadow-xl hover:shadow-sky-800 sm:w-full sm:p-6 md:max-w-[700px] lg:max-w-[450px] lg:p-8',
+        className,
       )}
     >
-      <div className="w-full flex flex-col gap-2">
+      <div className="flex w-full flex-col gap-2">
         <span className="absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-blue-400 via-sky-600 to-indigo-900" />
         <div className="sm:flex sm:gap-4">
           <div className="max-sm:hidden">
@@ -70,81 +80,81 @@ export function ProjectCard({
               alt={title}
               width={192}
               height={128}
-              src={image || "/figma.png"}
-              className="h-32 w-48 rounded-lg object-cover shadow-sm border-2 border-neutral-50/40 group-hover:border-sky-600 transition duration-300"
+              src={image || '/figma.png'}
+              className="h-32 w-48 rounded-lg border-2 border-neutral-50/40 object-cover shadow-sm transition duration-300 group-hover:border-sky-600"
               loading="lazy"
             />
           </div>
-          <div className="text-right w-full">
+          <div className="w-full text-right">
             <h3 className="text-lg font-bold sm:text-xl">{title}</h3>
             <p
               className={cn(
-                "flex justify-end items-center gap-2 mt-1 text-xs font-medium",
+                'mt-1 flex items-center justify-end gap-2 text-xs font-medium',
                 {},
-                categoryData?.textColor
+                categoryData?.textColor,
               )}
             >
               {categoryData?.titleName} {categoryData?.icon}
             </p>
 
-            <div className="max-xs:hidden mt-4 text-right flex justify-end">
+            <div className="mt-4 flex justify-end text-right max-xs:hidden">
               <p className="max-w-[35ch] text-sm text-neutral-500">
                 {shortDescription}
               </p>
             </div>
           </div>
         </div>
-        <div className="mt-4 text-right flex justify-end">
-          <p className="xs:hidden max-w-[40ch] text-sm text-neutral-500">
+        <div className="mt-4 flex justify-end text-right">
+          <p className="max-w-[40ch] text-sm text-neutral-500 xs:hidden">
             {shortDescription}
           </p>
         </div>
       </div>
 
-      <div className="flex w-full flex-col mt-2 mb-8">
-        <div className="flex justify-end items-center gap-2">
+      <div className="mb-8 mt-2 flex w-full flex-col">
+        <div className="flex items-center justify-end gap-2">
           <p className="text-3xs text-neutral-600">
-            {!showMore ? "mostrar mais" : "mostrar menos"}
+            {!showMore ? 'mostrar mais' : 'mostrar menos'}
           </p>
           <button
             aria-label="Ver mais"
-            className="w-6 h-6 rounded bg-blue-700 text-xs font-medium uppercase leading-normal text-white  transition duration-150 ease-in-out hover:bg-blue-600  focus:bg-blue-600 focus:outline-none focus:ring-0 active:bg-blue-700 "
+            className="h-6 w-6 rounded bg-blue-700 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-blue-600 focus:bg-blue-600 focus:outline-none focus:ring-0 active:bg-blue-700"
             type="button"
             onClick={() => setShowMore(!showMore)}
           >
-            {showMore ? "-" : "+"}
+            {showMore ? '-' : '+'}
           </button>
         </div>
         <div
           className={cn(
-            "flex flex-col items-end gap-2 text-right transition-all duration-300 mt-2",
+            'mt-2 flex flex-col items-end gap-2 text-right transition-all duration-300',
             {
-              "h-0": !showMore,
-              "h-52 sm:h-20": showMore,
-            }
+              'h-0': !showMore,
+              'h-52 sm:h-20': showMore,
+            },
           )}
         >
           <Image
             alt={title}
             width={192}
             height={128}
-            src={image || "/figma.png"}
+            src={image || '/figma.png'}
             className={cn(
-              "h-32 w-6/12 rounded-lg object-cover object-center shadow-sm border border-neutral-50/40 group-hover:border-sky-600 transition-all duration-200 sm:hidden",
+              'h-32 w-6/12 rounded-lg border border-neutral-50/40 object-cover object-center shadow-sm transition-all duration-200 group-hover:border-sky-600 sm:hidden',
               {
-                "h-0 invisible": !showMore,
-                "h-20 visible": showMore,
-              }
+                'invisible h-0': !showMore,
+                'visible h-20': showMore,
+              },
             )}
             loading="lazy"
           />
           <p
             className={cn(
-              "text-sm text-neutral-500 transition-all duration-200",
+              'text-sm text-neutral-500 transition-all duration-200',
               {
-                "h-0 invisible": !showMore,
-                "h-full": showMore,
-              }
+                'invisible h-0': !showMore,
+                'h-full': showMore,
+              },
             )}
           >
             {moreDescription}
@@ -155,28 +165,35 @@ export function ProjectCard({
       <dl className="mt-6 flex justify-end gap-4 sm:gap-6">
         <div className="flex flex-col">
           <dt className="text-sm font-medium text-neutral-200">Repositório</dt>
-          <a
-            href={repositoryLink}
-            target="_blank"
-            className="text-xs text-neutral-400 hover:text-blue-700 hover:font-semibold"
-          >
-            <dd className="flex gap-2 items-end">
+          {repositoryType === '@PUBLIC' && repositoryLink ? (
+            <a
+              href={repositoryLink}
+              target="_blank"
+              className="text-xs text-neutral-400 hover:font-semibold hover:text-blue-700"
+            >
+              <dd className="flex items-end gap-2">
+                <Computer size={16} />
+                Link
+              </dd>
+            </a>
+          ) : (
+            <dd className="flex items-end gap-2">
               <Computer size={16} />
-              Link
+              ---
             </dd>
-          </a>
+          )}
         </div>
 
         <div className="flex flex-col">
           <dt className="text-sm font-medium text-neutral-200">Deploy</dt>
           <a
-            href={deployLink || "#"}
-            target={deployLink ? "_blank" : "_self"}
-            className="text-xs text-neutral-400 hover:text-blue-700 hover:font-semibold"
+            href={deployLink || '#'}
+            target={deployLink ? '_blank' : '_self'}
+            className="text-xs text-neutral-400 hover:font-semibold hover:text-blue-700"
           >
-            <dd className="flex gap-2 items-end">
+            <dd className="flex items-end gap-2">
               <Globe2 size={16} />
-              {deployLink ? "Link" : "  ---  "}
+              {deployLink ? 'Link' : '  ---  '}
             </dd>
           </a>
         </div>

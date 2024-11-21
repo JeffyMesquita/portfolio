@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export interface ToolCardProps {
   title: string;
@@ -20,14 +20,14 @@ export function ToolCard({
     <a
       href={link}
       className={cn(
-        "border-[0.5px] border-neutral-500 block rounded-2xl my-6",
-        className
+        'my-6 block rounded-2xl border-[0.5px] border-neutral-500',
+        className,
       )}
       target="_blank"
     >
-      <div className="py-8 bg-neutral-800 w-full text-center rounded-t-2xl">
+      <div className="w-full rounded-t-2xl bg-neutral-800 py-8 text-center">
         <Image
-          className="max-w-[80px] rounded-2xl mx-auto brightness-90 contrast-125 hover:contrast-100 transition ease-in duration-300 delay-100"
+          className="mx-auto max-w-[80px] rounded-2xl brightness-90 contrast-125 transition delay-100 duration-300 ease-in hover:contrast-100"
           src={image}
           alt={title}
           width={80}

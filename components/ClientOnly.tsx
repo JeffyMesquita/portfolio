@@ -1,11 +1,11 @@
-"use client";
+'use client';
 import {
   Fragment,
   PropsWithChildren,
   ReactNode,
   useEffect,
   useState,
-} from "react";
+} from 'react';
 
 interface ClientOnlyProps extends PropsWithChildren {
   fallback?: ReactNode;

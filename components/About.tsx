@@ -1,12 +1,12 @@
-import { SectionVariant } from "./SectionVariant";
+import { SectionVariant } from './SectionVariant';
 
 export function About() {
   return (
     <SectionVariant variant spaceY>
-      <div className="w-10/12 mx-auto projects mt-14 max-sm:mt-8 max-md:mt-12 about">
+      <div className="projects about mx-auto mt-14 w-10/12 max-md:mt-12 max-sm:mt-8">
         <h1
           id="sobre"
-          className="md:text-4xl text-3xl lg:text-5xl font-bold mb-10"
+          className="mb-10 text-3xl font-bold md:text-4xl lg:text-5xl"
         >
           Sobre mim
         </h1>

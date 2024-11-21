@@ -1,6 +1,6 @@
-import { Github, Instagram, Linkedin } from "lucide-react";
-import Image from "next/image";
-import { SectionVariant } from "./SectionVariant";
+import { Github, Instagram, Linkedin } from 'lucide-react';
+import Image from 'next/image';
+import { SectionVariant } from './SectionVariant';
 
 export function Footer() {
   // function scrollToLeft() {
@@ -25,22 +25,22 @@ export function Footer() {
 
   return (
     <SectionVariant variant>
-      <footer className="w-full mt-14 max-sm:mt-8 max-md:mt-12 pb-2">
+      <footer className="mt-14 w-full pb-2 max-md:mt-12 max-sm:mt-8">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="flex justify-center gap-4 items-center text-blue-700">
+          <div className="flex items-center justify-center gap-4 text-blue-700">
             <div className="relative">
               <Image
-                className="w-8 h-auto transform"
+                className="h-auto w-8 transform"
                 width={340}
                 height={200}
                 src="/me.png"
                 alt="Hero Image"
                 loading="lazy"
               />
-              <div className="w-[100%] overflow-hidden h-[70%] z-[-1] top-[5%] -left-0 rounded-full bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500 absolute border bottom-4 border-blue-800" />
+              <div className="absolute -left-0 bottom-4 top-[5%] z-[-1] h-[70%] w-[100%] overflow-hidden rounded-full border border-blue-800 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500" />
             </div>
 
-            <h4 className="text-3xl font-extrabold sm:text-5xl relative">
+            <h4 className="relative text-3xl font-extrabold sm:text-5xl">
               Jeferson Mesquita
             </h4>
           </div>
@@ -52,7 +52,7 @@ export function Footer() {
           <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
             <li>
               <a
-                className="text-neutral-700 transition hover:text-neutral-700/75 cursor-pointer"
+                className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#quemsou"
               >
                 Quem Sou
@@ -61,7 +61,7 @@ export function Footer() {
 
             <li>
               <a
-                className="text-neutral-700 transition hover:text-neutral-700/75 cursor-pointer"
+                className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#sobre"
               >
                 Sobre mim
@@ -70,7 +70,7 @@ export function Footer() {
 
             <li>
               <a
-                className="text-neutral-700 transition hover:text-neutral-700/75 cursor-pointer"
+                className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#servicos"
               >
                 Serviços
@@ -79,7 +79,7 @@ export function Footer() {
 
             <li>
               <a
-                className="text-neutral-700 transition hover:text-neutral-700/75 cursor-pointer"
+                className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#ferramentas"
               >
                 Ferramentas
@@ -88,7 +88,7 @@ export function Footer() {
 
             <li>
               <a
-                className="text-neutral-700 transition hover:text-neutral-700/75 cursor-pointer"
+                className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#projetos"
               >
                 Projetos
@@ -131,7 +131,7 @@ export function Footer() {
             </li>
           </ul>
         </div>
-        <p className="text-xs text-center text-neutral-500">
+        <p className="text-center text-xs text-neutral-500">
           &copy; 2023. Jeferson Mesquita. All rights reserved.
         </p>
       </footer>

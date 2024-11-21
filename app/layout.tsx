@@ -1,24 +1,24 @@
-import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Space_Mono } from 'next/font/google';
+import './globals.css';
 
-const space_mono = Space_Mono({ weight: ["400", "700"], subsets: ["latin"] });
+const space_mono = Space_Mono({ weight: ['400', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jeffymesquita.dev"),
+  metadataBase: new URL('https://jeffymesquita.dev'),
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   openGraph: {
-    images: "/og-image.png",
+    images: '/og-image.png',
   },
   title: {
-    default: "Jeferson Mesquita",
-    template: "Jeferson Mesquita | %s",
+    default: 'Jeferson Mesquita',
+    template: 'Jeferson Mesquita | %s',
   },
-  description: "This is my personal portfolio",
+  description: 'This is my personal portfolio',
   verification: {
-    google: "google-site-verification=878787878",
+    google: 'google-site-verification=878787878',
   },
   robots: {
     index: true,
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="pt=br">
       <body
-        className={`${space_mono.className} w-screen h-screen scrollbar-hide`}
+        className={`${space_mono.className} scrollbar-hide h-screen w-screen`}
       >
         {children}
       </body>

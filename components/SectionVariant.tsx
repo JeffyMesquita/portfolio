@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 interface SectionVariantProps {
   children: React.ReactNode;
@@ -13,9 +13,9 @@ export function SectionVariant({
 }: SectionVariantProps) {
   return (
     <div
-      className={cn("w-full h-auto", {
-        "bg-neutral-950/60": variant,
-        "pb-20 pt-10": spaceY,
+      className={cn('h-auto w-full', {
+        'bg-neutral-950/60': variant,
+        'pb-20 pt-10': spaceY,
       })}
     >
       {children}

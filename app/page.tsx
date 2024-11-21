@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { About } from "@/components/About";
-import { Container } from "@/components/Container";
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
-import Projects from "@/components/Projects";
-import { ScrollToTop } from "@/components/ScrollToTop";
-import { Services } from "@/components/Services";
-import { Tools } from "@/components/Tools";
-import Script from "next/script";
+import { About } from '@/components/About';
+import { Container } from '@/components/Container';
+import { Footer } from '@/components/Footer';
+import { Navbar } from '@/components/Navbar';
+import Projects from '@/components/Projects';
+import { ScrollToTop } from '@/components/ScrollToTop';
+import { Services } from '@/components/Services';
+import { Tools } from '@/components/Tools';
+import Script from 'next/script';
 
 export default function Home() {
   return (
     <>
-      <main className="w-full h-full">
+      <main className="h-full w-full">
         <Navbar />
         <Container />
         <About />

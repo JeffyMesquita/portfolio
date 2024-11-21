@@ -1,21 +1,21 @@
-"use client";
-import ServiceCard from "@/components/ServiceCard";
-import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiExpo } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
-import { SectionVariant } from "./SectionVariant";
+'use client';
+import ServiceCard from '@/components/ServiceCard';
+import { FaNodeJs, FaReact } from 'react-icons/fa';
+import { SiExpo } from 'react-icons/si';
+import { TbBrandNextjs } from 'react-icons/tb';
+import { SectionVariant } from './SectionVariant';
 
 export function Services() {
   return (
     <SectionVariant spaceY>
-      <section className="w-10/12 mx-auto mt-14 max-sm:mt-8 max-md:mt-12">
+      <section className="mx-auto mt-14 w-10/12 max-md:mt-12 max-sm:mt-8">
         <h1
           id="servicos"
-          className="md:text-4xl text-3xl lg:text-5xl font-bold mb-10"
+          className="mb-10 text-3xl font-bold md:text-4xl lg:text-5xl"
         >
           Serviços
         </h1>
-        <div className="flex flex-wrap gap-7 justify-center">
+        <div className="flex flex-wrap justify-center gap-7">
           <ServiceCard
             className="services-1"
             title="ReactJs"

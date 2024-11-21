@@ -1,14 +1,14 @@
-"use client";
-import { ToolCard } from "@/components/ToolCard";
-import { SectionVariant } from "./SectionVariant";
+'use client';
+import { ToolCard } from '@/components/ToolCard';
+import { SectionVariant } from './SectionVariant';
 
 export function Tools() {
   return (
     <SectionVariant spaceY variant>
-      <section className="w-10/12 mx-auto mt-14 max-sm:mt-8 max-md:mt-12">
+      <section className="mx-auto mt-14 w-10/12 max-md:mt-12 max-sm:mt-8">
         <h1
           id="ferramentas"
-          className="md:text-4xl text-3xl lg:text-5xl font-bold mb-10"
+          className="mb-10 text-3xl font-bold md:text-4xl lg:text-5xl"
         >
           Ferramentas
         </h1>
@@ -16,7 +16,7 @@ export function Tools() {
           Os produtos, aplicativos e serviços que utilizo diariamente para o
           trabalho e vida pessoal.
         </p>
-        <div className="mt-20 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-10">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
           <ToolCard
             className="tools-1"
             title="Vscode"
