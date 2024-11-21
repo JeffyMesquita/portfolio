@@ -7,7 +7,7 @@ export function Container() {
   return (
     <SectionVariant spaceY>
       <section className="whoiam relative mx-auto w-10/12 pt-4 lg:pt-16">
-        <div className="flex flex-row-reverse items-center justify-between">
+        <div className="flex flex-col items-center justify-between md:flex-row-reverse">
           <div className="flex items-end justify-end max-md:pt-4">
             <div className="relative">
               <Image

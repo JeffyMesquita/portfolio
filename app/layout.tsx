@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="pt=br">
       <body
-        className={`${space_mono.className} scrollbar-hide h-screen w-screen`}
+        className={`${space_mono.className} scrollbar-hide max-w-screen h-screen w-screen overflow-x-hidden`}
       >
         {children}
       </body>
