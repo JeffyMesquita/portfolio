@@ -23,6 +23,7 @@ export interface ProjectCardProps {
   deployLink: string;
   image?: string;
   className?: string;
+  side: '@LEFT' | '@RIGHT';
 }
 
 const categories = [
@@ -62,27 +63,29 @@ export function ProjectCard({
   deployLink,
   image,
   className,
+  side = '@LEFT',
 }: ProjectCardProps) {
+  console.log('side', side);
   const [showMore, setShowMore] = useState<boolean>(false);
   const categoryData = categories.find((cat) => cat.name === category);
 
   return (
     <div
       className={cn(
-        'group relative flex min-h-[250px] flex-col justify-between overflow-hidden rounded-lg border border-neutral-50/40 p-4 transition duration-300 hover:border-sky-600 hover:shadow-xl hover:shadow-sky-800 sm:w-full sm:p-6 md:max-w-[700px] lg:max-w-[450px] lg:p-8',
+        'group relative flex min-h-[250px] transform flex-col justify-between overflow-hidden rounded-lg border border-neutral-50/40 p-4 transition-all duration-500 ease-linear hover:scale-105 hover:border-sky-600 hover:shadow-xl hover:shadow-sky-800 sm:w-full sm:p-6 md:max-w-[700px] lg:max-w-[450px] lg:p-8',
         className,
       )}
     >
       <div className="flex w-full flex-col gap-2">
         <span className="absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-blue-400 via-sky-600 to-indigo-900" />
         <div className="sm:flex sm:gap-4">
-          <div className="max-sm:hidden">
+          <div className="">
             <Image
               alt={title}
               width={192}
               height={128}
               src={image || '/figma.png'}
-              className="h-32 w-48 rounded-lg border-2 border-neutral-50/40 object-cover shadow-sm transition duration-300 group-hover:border-sky-600"
+              className="mx-auto h-24 w-1/2 rounded-lg border-2 border-neutral-50/40 object-fill shadow-sm transition duration-300 group-hover:border-sky-600 sm:h-32 sm:w-48 sm:object-cover"
               loading="lazy"
             />
           </div>

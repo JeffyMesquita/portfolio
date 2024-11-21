@@ -21,24 +21,28 @@ export function Projects() {
           desenvolvimento web.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-7">
-          {PROJECTS.map((project, index) => (
-            <ProjectCard
-              key={index}
-              className={`projects-${index}`}
-              title={project.title}
-              shortDescription={project.subtitle}
-              moreDescription={project.description}
-              category={project.stack}
-              image={project.image}
-              repositoryType={project.repository.type}
-              repositoryLink={
-                project.repository.type === '@PUBLIC'
-                  ? project.repository.link
-                  : null
-              }
-              deployLink={project.deploy}
-            />
-          ))}
+          {PROJECTS.map((project, index) => {
+            const side =
+              index === 0 ? '@LEFT' : index % 2 === 0 ? '@LEFT' : '@RIGHT';
+            return (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                side={side}
+                shortDescription={project.subtitle}
+                moreDescription={project.description}
+                category={project.stack}
+                image={project.image}
+                repositoryType={project.repository.type}
+                repositoryLink={
+                  project.repository.type === '@PUBLIC'
+                    ? project.repository.link
+                    : null
+                }
+                deployLink={project.deploy}
+              />
+            );
+          })}
         </div>
       </div>
     </SectionVariant>
