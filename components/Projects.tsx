@@ -39,26 +39,6 @@ export function Projects() {
               deployLink={project.deploy}
             />
           ))}
-          {/* <ProjectCard
-            className="projects-1"
-            title="Test Frontend - ImobPower"
-            shortDescription="Um teste de frontend - ReactJS"
-            moreDescription="Este projeto foi desenvolvido para um teste de frontend, onde o objetivo era criar uma aplicação que consumisse uma API e exibisse os dados em uma de Pokémon's, que proporcionou a minha vaga na empresa ImobPower."
-            category="web"
-            image="/pokedex.png"
-            repositoryLink="https://github.com/JeffyMesquita/teste-frontend-imobpower/tree/main/pokedex"
-            deployLink="https://teste-frontend-imobpower.vercel.app/"
-          />
-          <ProjectCard
-            className="projects-2"
-            title="Test Frontend - Plin"
-            shortDescription="Um teste de frontend - ReactJS e NextJS"
-            moreDescription="Este projeto foi desenvolvido para um teste de frontend, onde o objetivo era criar uma aplicação que consumisse uma Api de clima, Api pra consulta de CEP e um formulário, Fiz este teste para empresa Plin."
-            category="web"
-            image="/plin.png"
-            repositoryLink="https://github.com/JeffyMesquita/frontend-test"
-            deployLink="https://frontend-test.jeffymesquita.dev/weather"
-          /> */}
         </div>
       </div>
     </SectionVariant>
