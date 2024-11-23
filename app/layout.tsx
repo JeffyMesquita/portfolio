@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Space_Mono } from 'next/font/google';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const space_mono = Space_Mono({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -32,11 +33,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt=br">
+    <html lang="pt=br" className="scrollbar-hide">
       <body
         className={`${space_mono.className} scrollbar-hide max-w-screen h-screen w-screen overflow-x-hidden`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );

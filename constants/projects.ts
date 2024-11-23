@@ -56,7 +56,10 @@ type Tags =
   | 'Tailwind CSS'
   | 'SASS'
   | 'LESS'
-  | 'Vercel';
+  | 'Vercel'
+  | 'Serverless'
+  | 'React Query'
+  | 'Redis';
 
 type RepositoryPrivate = {
   type: '@PRIVATE';
@@ -95,6 +98,31 @@ export const PROJECTS: Project[] = [
       link: 'https://github.com/JeffyMesquita/portfolio',
     },
     tags: ['React', 'Next.js', 'TypeScript', 'Vercel'],
+  },
+  {
+    title: 'Amigo Secreto',
+    subtitle: 'Um sorteador de amigo secreto',
+    stack: '@FULLSTACK',
+    description:
+      'Este projeto foi desenvolvido devido a `dor` de acontecer sorteios de amigo secreto e sempre ter que fazer manualmente, então criei este projeto para facilitar a vida de quem precisa fazer sorteios de amigo secreto.',
+    image: '/amigo-secreto.png',
+    deploy: 'https://amigosecreto.jeffymesquita.dev',
+    repository: {
+      type: '@PUBLIC',
+      link: 'https://github.com/JeffyMesquita/amigo-secreto',
+    },
+    tags: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Vercel',
+      'Redis',
+      'Serverless',
+      'React Query',
+      'Shadcn/UI',
+      'TypeScript',
+      'Tailwind CSS',
+    ],
   },
   {
     title: 'Test Frontend - ImobPower',

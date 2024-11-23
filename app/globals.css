@@ -31,23 +31,19 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
-.scrollbar-hide:hover::-webkit-scrollbar-thumb:vertical {
-  @apply rounded-md bg-neutral-600;
+.scrollbar::-webkit-scrollbar-thumb:horizontal {
+  @apply h-[1px] w-[1px] rounded-xl bg-blue-400;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  @apply h-1.5 w-1.5 rounded-md bg-transparent;
-}
-
-.scrollbar-hide:hover::-webkit-scrollbar-thumb:horizontal {
-  @apply bg-neutral-600;
-}
-
-.scrollbar-hide::-webkit-scrollbar-thumb:horizontal {
-  @apply h-[1px] w-[1px] rounded-md bg-transparent;
+.scrollbar::-webkit-scrollbar-thumb:vertical {
+  @apply h-[1px] w-[1px] rounded-xl bg-blue-400;
 }
