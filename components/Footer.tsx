@@ -3,26 +3,6 @@ import Image from 'next/image';
 import { SectionVariant } from './SectionVariant';
 
 export function Footer() {
-  // function scrollToLeft() {
-  //   window.scrollTo({
-  //     left: 0,
-  //     behavior: "smooth",
-  //   });
-  // }
-
-  // function handleScroll(id: string) {
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     element.scrollIntoView({
-  //       behavior: "smooth",
-  //     });
-  //   }
-
-  //   setTimeout(() => {
-  //     scrollToLeft();
-  //   }, 850);
-  // }
-
   return (
     <SectionVariant variant>
       <footer className="mt-14 w-full pb-2 max-md:mt-12 max-sm:mt-8">
