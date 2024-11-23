@@ -132,7 +132,8 @@ export function Footer() {
           </ul>
         </div>
         <p className="text-center text-xs text-neutral-500">
-          &copy; 2023. Jeferson Mesquita. All rights reserved.
+          &copy; {new Date().getFullYear()} JeffyMesquita. Todos os direitos
+          reservados.
         </p>
       </footer>
     </SectionVariant>
