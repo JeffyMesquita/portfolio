@@ -138,20 +138,6 @@ export function ProjectCard({
             },
           )}
         >
-          <Image
-            alt={title}
-            width={192}
-            height={128}
-            src={image || '/figma.png'}
-            className={cn(
-              'h-32 w-6/12 rounded-lg border border-neutral-50/40 object-cover object-center shadow-sm transition-all duration-200 group-hover:border-sky-600 sm:hidden',
-              {
-                'invisible h-0': !showMore,
-                'visible h-20': showMore,
-              },
-            )}
-            loading="lazy"
-          />
           <p
             className={cn(
               'text-sm text-neutral-500 transition-all duration-200',
