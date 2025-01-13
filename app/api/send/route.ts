@@ -131,7 +131,7 @@ function createEmailHTML(
   `;
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<Response> {
   const { name, phone, email, subject, message } = await req.json();
 
   const html = createEmailHTML(name, phone, email, subject, message);
@@ -145,20 +145,11 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) {
-      return {
-        status: 500,
-        body: { error },
-      };
+      return Response.json({ error }, { status: 500 });
     }
 
-    return {
-      status: 200,
-      body: { data },
-    };
+    return Response.json(data);
   } catch (error) {
-    return {
-      status: 500,
-      body: { error },
-    };
+    return Response.json({ error }, { status: 500 });
   }
 }
