@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import type { Metadata } from 'next';
 import { Space_Mono } from 'next/font/google';
 import './globals.css';
@@ -34,6 +35,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt=br" className="scrollbar-hide">
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-2CBCW9ZF03"
+        ></script>
+      </head>
       <body
         className={`${space_mono.className} scrollbar-hide max-w-screen h-screen w-screen overflow-x-hidden`}
       >
