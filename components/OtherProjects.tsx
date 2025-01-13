@@ -6,12 +6,12 @@ function OtherProjects() {
   return (
     <SectionVariant spaceY>
       <div className="projects mx-auto mt-14 w-10/12 max-md:mt-12 max-sm:mt-8">
-        <h1
+        <h2
           className="text-3xl font-bold md:text-4xl lg:text-5xl"
           id="projetos"
         >
           Outros Projetos(Testes e/ou Estudos)
-        </h1>
+        </h2>
         <p className="pt-6 text-neutral-300">
           Aqui estão alguns projetos que desenvolvi para testar ou estudar
           tecnologias e conceitos. Gostaria de apresentar a vocês alguns desses

@@ -81,3 +81,31 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #60a5fa #121212;
 }
+
+.input-theme {
+  @apply bg-neutral-950 ring-blue-300;
+}
+
+.input {
+  @apply w-full rounded bg-transparent px-1 py-2 text-xs text-blue-900 outline-none placeholder:text-blue-600/75 disabled:cursor-not-allowed;
+}
+
+.text-theme {
+  @apply font-semibold text-blue-500;
+}
+
+.textarea-theme {
+  @apply bg-neutral-950 ring-blue-300;
+}
+
+.textarea {
+  @apply h-full w-full resize-none overflow-auto bg-transparent p-2 text-xs text-blue-900 outline-none placeholder:text-blue-600/75;
+}
+
+.button-default {
+  @apply bg-gradient-to-r from-blue-500 to-blue-700 text-neutral-100 hover:opacity-90 disabled:text-neutral-300 disabled:opacity-80 disabled:hover:cursor-not-allowed;
+}
+
+.button-outline {
+  @apply bg-transparent text-blue-400 outline outline-2 -outline-offset-2 outline-blue-400 transition ease-in hover:bg-blue-400 hover:text-neutral-100 focus:outline-none disabled:cursor-not-allowed disabled:bg-neutral-300 disabled:text-neutral-100 disabled:outline-none disabled:hover:bg-neutral-300 disabled:hover:text-neutral-200;
+}

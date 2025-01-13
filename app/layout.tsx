@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Space_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
+import { Providers } from './Providers';
 
 const space_mono = Space_Mono({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -116,7 +117,7 @@ export default function RootLayout({
       <body
         className={`${space_mono.className} scrollbar-hide max-w-screen h-screen w-screen overflow-x-hidden`}
       >
-        {children}
+        <Providers>{children}</Providers>
         <Analytics />
       </body>
     </html>

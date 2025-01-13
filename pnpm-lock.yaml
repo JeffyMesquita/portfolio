@@ -29,6 +29,9 @@ importers:
       framer-motion:
         specifier: ^11.13.1
         version: 11.13.1(@emotion/is-prop-valid@0.8.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      imask:
+        specifier: 6.6.3
+        version: 6.6.3
       lucide-react:
         specifier: ^0.460.0
         version: 0.460.0(react@18.2.0)
@@ -53,6 +56,12 @@ importers:
       react-icons:
         specifier: ^4.10.1
         version: 4.12.0(react@18.2.0)
+      react-intersection-observer:
+        specifier: ^9.14.1
+        version: 9.14.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-number-format:
+        specifier: 5.4.0
+        version: 5.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       resend:
         specifier: 4.0.1-alpha.0
         version: 4.0.1-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1055,6 +1064,10 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
+  imask@6.6.3:
+    resolution: {integrity: sha512-a9MTDhm+ET4G2IRcdUGuVTXHS05WsRNPGM5CeNJnXiXuoi4zv7g0/UDFLlRF4lBBeb8EWds4C4JVwhI0nuAIug==}
+    engines: {npm: '>=4.0.0'}
+
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -1628,8 +1641,23 @@ packages:
     peerDependencies:
       react: '*'
 
+  react-intersection-observer@9.14.1:
+    resolution: {integrity: sha512-k1xIUn3sCQi3ugNeF64FJb3zwve5mcetvAUR9JazXeOmtap4IP2evN8rs+yf6SQ7F1QydsOGiqTmt+lySKZ9uA==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react-number-format@5.4.0:
+    resolution: {integrity: sha512-NWdICrqLhI7rAS8yUeLVd6Wr4cN7UjJ9IBTS0f/a9i7UB4x4Ti70kGnksBtZ7o4Z7YRbvCMMR/jQmkoOBa/4fg==}
+    peerDependencies:
+      react: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
   react-promise-suspense@0.3.4:
     resolution: {integrity: sha512-I42jl7L3Ze6kZaq+7zXWSunBa3b1on5yfvUW6Eo/3fFOj6dZ5Bqmcd264nJbTK/gn1HjjILAjSwnZbV4RpSaNQ==}
@@ -3072,6 +3100,8 @@ snapshots:
 
   ignore@5.3.2: {}
 
+  imask@6.6.3: {}
+
   import-fresh@3.3.0:
     dependencies:
       parent-module: 1.0.1
@@ -3562,7 +3592,19 @@ snapshots:
     dependencies:
       react: 18.2.0
 
+  react-intersection-observer@9.14.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+    optionalDependencies:
+      react-dom: 18.2.0(react@18.2.0)
+
   react-is@16.13.1: {}
+
+  react-number-format@5.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   react-promise-suspense@0.3.4:
     dependencies:

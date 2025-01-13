@@ -1,5 +1,6 @@
 'use client';
 
+import { Contact } from '@/components';
 import { About } from '@/components/About/About';
 import { Container } from '@/components/Container';
 import { Footer } from '@/components/Footer';
@@ -22,6 +23,7 @@ export default function Home() {
         <Tools />
         <Projects />
         <OtherProjects />
+        <Contact />
         <Footer />
       </main>
       <Script src="https://unpkg.com/scrollreveal"></Script>
