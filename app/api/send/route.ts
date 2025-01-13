@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import { type NextRequest } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
 
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 
@@ -131,7 +131,7 @@ function createEmailHTML(
   `;
 }
 
-export async function POST(req: NextRequest): Promise<Response> {
+export async function POST(req: NextRequest): Promise<NextResponse> {
   const { name, phone, email, subject, message } = await req.json();
 
   const html = createEmailHTML(name, phone, email, subject, message);
@@ -145,11 +145,11 @@ export async function POST(req: NextRequest): Promise<Response> {
     });
 
     if (error) {
-      return Response.json({ error }, { status: 500 });
+      return NextResponse.json({ error }, { status: 500 });
     }
 
-    return Response.json(data);
+    return NextResponse.json(data);
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    return NextResponse.json({ error }, { status: 500 });
   }
 }
