@@ -86,6 +86,29 @@ type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    title: 'Ketteryn Ribeiro - Advogada',
+    subtitle: 'Site institucional para advogada',
+    stack: '@FRONTEND',
+    description:
+      'Site institucional desenvolvido para a advogada Ketteryn Ribeiro, com o objetivo de apresentar seus serviços e informações de contato. \n\nDesenvolvido com ReactJS, TypeScript e Next.js. \n\nHospedado na Vercel.',
+    image: '/ketteryn-ribeiro.png',
+    deploy: 'https://ketteryn-lp.vercel.app',
+    repository: {
+      type: '@PRIVATE',
+      link: null,
+    },
+    tags: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Vercel',
+      'UI/UX Design',
+      'Tailwind CSS',
+      'TypeScript',
+      'Shadcn/UI',
+    ],
+  },
+  {
     title: 'Portfolio',
     subtitle: 'Meu portfólio pessoal',
     stack: '@FRONTEND',
@@ -124,6 +147,9 @@ export const PROJECTS: Project[] = [
       'Tailwind CSS',
     ],
   },
+];
+
+export const OTHERS_PROJECTS: Project[] = [
   {
     title: 'Test Frontend - ImobPower',
     subtitle: 'Um teste de frontend - ReactJS',

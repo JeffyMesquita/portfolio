@@ -19,7 +19,8 @@ export const metadata: Metadata = {
   },
   description: 'This is my personal portfolio',
   verification: {
-    google: 'google-site-verification=878787878',
+    google:
+      'google-site-verification=CrYWSwBqLw0c04-gJS14BiHsvS-lXboPzcWsQkQngbw',
   },
   robots: {
     index: true,

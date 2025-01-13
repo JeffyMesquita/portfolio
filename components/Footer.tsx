@@ -1,6 +1,7 @@
-import { Github, Instagram, Linkedin } from 'lucide-react';
+import { Github, Instagram, Linkedin, MailIcon } from 'lucide-react';
 import Image from 'next/image';
 import { SectionVariant } from './SectionVariant';
+import Link from 'next/link';
 
 export function Footer() {
   return (
@@ -31,83 +32,94 @@ export function Footer() {
 
           <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
             <li>
-              <a
+              <Link
                 className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#quemsou"
               >
                 Quem Sou
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#sobre"
               >
                 Sobre mim
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#servicos"
               >
                 Serviços
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#ferramentas"
               >
                 Ferramentas
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 className="cursor-pointer text-neutral-700 transition hover:text-neutral-700/75"
                 href="#projetos"
               >
                 Projetos
-              </a>
+              </Link>
             </li>
           </ul>
 
           <ul className="mt-12 flex justify-center gap-6 md:gap-8">
             <li>
-              <a
+              <Link
                 href="https://www.linkedin.com/in/jeffymesquita/"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 target="_blank"
                 className="text-blue-700 transition hover:text-blue-700/75"
               >
                 <Linkedin size={24} />
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 href="https://github.com/JeffyMesquita"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 target="_blank"
                 className="text-blue-700 transition hover:text-blue-700/75"
               >
                 <Github size={24} />
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
+              <Link
                 href="https://www.instagram.com/jeferson.mesquita/"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 target="_blank"
                 className="text-blue-700 transition hover:text-blue-700/75"
               >
                 <Instagram size={24} />
-              </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="mailto:je_2742@hotmail.com"
+                rel="noreferrer noopener"
+                target="_blank"
+                className="text-blue-700 transition hover:text-blue-700/75"
+              >
+                <MailIcon size={24} />
+              </Link>
             </li>
           </ul>
         </div>
