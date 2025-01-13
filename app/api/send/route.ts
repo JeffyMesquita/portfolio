@@ -145,11 +145,20 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) {
-      return Response.json({ error }, { status: 500 });
+      return {
+        status: 500,
+        body: { error },
+      };
     }
 
-    return Response.json(data);
+    return {
+      status: 200,
+      body: { data },
+    };
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    return {
+      status: 500,
+      body: { error },
+    };
   }
 }
