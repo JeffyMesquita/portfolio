@@ -1,9 +1,106 @@
 'use client';
+
 import ServiceCard from '@/components/ServiceCard';
 import { FaNodeJs, FaReact } from 'react-icons/fa';
-import { SiExpo } from 'react-icons/si';
+import { SiExpo, SiNestjs, SiTypescript, SiJavascript } from 'react-icons/si';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { SectionVariant } from './SectionVariant';
+import { IconType } from 'react-icons';
+import { AnimatedElement } from './AnimatedElement';
+
+interface ServiceInfo {
+  title: string;
+  icon: IconType;
+  iconColor: string;
+  shortDescription: string;
+  description: string;
+  linkHref: string;
+  linkText: string;
+  effectColor: string;
+}
+
+const services: ServiceInfo[] = [
+  {
+    title: 'ReactJs',
+    icon: FaReact,
+    iconColor: 'text-sky-600',
+    shortDescription: 'Desenvolvimento Web',
+    description: 'utilizando a biblioteca ReactJs.',
+    linkHref: 'https://pt-br.reactjs.org/',
+    linkText: 'Saiba mais',
+    effectColor: 'bg-sky-600',
+  },
+  {
+    title: 'NextJs',
+    icon: TbBrandNextjs,
+    iconColor: 'text-zinc-600',
+    shortDescription: 'Desenvolvimento Web',
+    description: 'utilizando o framework NextJs.',
+    linkHref: 'https://nextjs.org/',
+    linkText: 'Saiba mais',
+    effectColor: 'bg-zinc-600',
+  },
+  {
+    title: 'Typescript',
+    icon: SiTypescript,
+    iconColor: 'text-blue-400',
+    shortDescription: 'Typescript',
+    description: 'utilizando a linguagem Typescript.',
+    linkHref: 'https://www.typescriptlang.org/',
+    linkText: 'Saiba mais',
+    effectColor: 'bg-blue-400',
+  },
+  {
+    title: 'Javascript',
+    icon: SiJavascript,
+    iconColor: 'text-yellow-400',
+    shortDescription: 'Javascript',
+    description: 'utilizando a linguagem Javascript.',
+    linkHref: 'https://developer.mozilla.org/pt-BR/docs/Web/JavaScript',
+    linkText: 'Saiba mais',
+    effectColor: 'bg-yellow-400',
+  },
+  {
+    title: 'React Native',
+    icon: FaReact,
+    iconColor: 'text-teal-400',
+    shortDescription: 'Desenvolvimento Mobile',
+    description: 'utilizando a biblioteca React Native.',
+    linkHref: 'https://reactnative.dev/',
+    linkText: 'Saiba mais',
+    effectColor: 'bg-teal-400',
+  },
+  {
+    title: 'Expo',
+    icon: SiExpo,
+    iconColor: 'text-zinc-950',
+    shortDescription: 'Desenvolvimento Mobile',
+    description: 'utilizando o framework Expo.',
+    linkHref: 'https://expo.dev/',
+    linkText: 'Saiba mais',
+    effectColor: 'bg-zinc-950',
+  },
+  {
+    title: 'NodeJs',
+    icon: FaNodeJs,
+    iconColor: 'text-green-400',
+    shortDescription: 'Desenvolvimento Backend',
+    description: 'utilizando o runtime NodeJs.',
+    linkHref: 'https://nodejs.org/en/',
+    linkText: 'Saiba mais',
+    effectColor: 'bg-green-400',
+  },
+  {
+    title: 'NestJs',
+    icon: SiNestjs,
+    iconColor: 'text-red-400',
+    shortDescription: 'Desenvolvimento Backend',
+    description: 'utilizando o framework NestJs.',
+    linkHref: 'https://nestjs.com/',
+    linkText: 'Saiba mais',
+    effectColor: 'bg-red-400',
+  },
+];
 
 export function Services() {
   return (
@@ -13,59 +110,26 @@ export function Services() {
           id="servicos"
           className="mb-10 text-3xl font-bold md:text-4xl lg:text-5xl"
         >
-          Serviços
+          Minha Stack
         </h1>
         <div className="flex flex-wrap justify-center gap-7">
-          <ServiceCard
-            className="services-1"
-            title="ReactJs"
-            icon={<FaReact size={50} className="text-sky-600" />}
-            shortDescription="Desenvolvimento Web"
-            description="utilizando a biblioteca ReactJs."
-            linkHref="https://pt-br.reactjs.org/"
-            linkText="Saiba mais"
-            effectColor="bg-sky-600"
-          />
-          <ServiceCard
-            className="services-2"
-            title="NextJs"
-            icon={<TbBrandNextjs size={50} className="text-zinc-600" />}
-            shortDescription="Desenvolvimento Web"
-            description="utilizando o framework NextJs."
-            linkHref="https://nextjs.org/"
-            linkText="Saiba mais"
-            effectColor="bg-zinc-600"
-          />
-          <ServiceCard
-            className="services-3"
-            title="React Native"
-            icon={<FaReact size={50} className="text-teal-400" />}
-            shortDescription="Desenvolvimento Mobile"
-            description="utilizando a biblioteca React Native."
-            linkHref="https://reactnative.dev/"
-            linkText="Saiba mais"
-            effectColor="bg-teal-400"
-          />
-          <ServiceCard
-            className="services-4"
-            title="Expo"
-            icon={<SiExpo size={50} className="text-zinc-950" />}
-            shortDescription="Desenvolvimento Mobile"
-            description="utilizando o framework Expo."
-            linkHref="https://expo.dev/"
-            linkText="Saiba mais"
-            effectColor="bg-zinc-950"
-          />
-          <ServiceCard
-            className="services-5"
-            title="NodeJs"
-            icon={<FaNodeJs size={50} className="text-green-400" />}
-            shortDescription="Desenvolvimento Backend"
-            description="utilizando o runtime NodeJs."
-            linkHref="https://nodejs.org/en/"
-            linkText="Saiba mais"
-            effectColor="bg-green-400"
-          />
+          {services.map((service, index) => (
+            <AnimatedElement
+              key={index}
+              origin={index % 2 === 0 ? 'left' : 'right'}
+            >
+              <ServiceCard
+                key={index}
+                title={service.title}
+                icon={<service.icon size={50} className={service.iconColor} />}
+                shortDescription={service.shortDescription}
+                description={service.description}
+                linkHref={service.linkHref}
+                linkText={service.linkText}
+                effectColor={service.effectColor}
+              />
+            </AnimatedElement>
+          ))}
         </div>
       </section>
     </SectionVariant>

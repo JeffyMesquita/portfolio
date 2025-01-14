@@ -1,0 +1,1 @@
+export { SplashEffect } from './SplashEffect';

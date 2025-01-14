@@ -2,24 +2,25 @@ import Image from 'next/image';
 import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
 import { GrInstagram } from 'react-icons/gr';
 import { SectionVariant } from './SectionVariant';
+import { SplashEffect } from './SplashEffect';
 
 export function Container() {
   return (
     <SectionVariant spaceY>
       <section className="whoiam relative mx-auto w-10/12 pt-4 lg:pt-16">
         <div className="flex flex-col items-center justify-between md:flex-row-reverse">
-          <div className="flex items-end justify-end max-md:pt-4">
-            <div className="relative">
+          <div className="relative flex items-end justify-end max-md:pt-4">
+            <div className="">
               <Image
-                className="h-auto w-full transform"
+                className="size-96 rounded-full shadow-2xl shadow-blue-950 drop-shadow-[0_10px_8px_rgba(30,58,138,0.4)]"
                 width={340}
                 height={200}
                 src="/me.png"
                 alt="Hero Image"
                 loading="lazy"
               />
-              <div className="absolute -left-0 bottom-4 top-[5%] z-[-1] h-[70%] w-[100%] overflow-hidden rounded-full border border-blue-800 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500"></div>
             </div>
+            <SplashEffect />
           </div>
           <div className="mt-5 p-4 pl-0 sm:mt-20">
             <h4 className="invisible -mt-8 h-0.5" id="quemsou">

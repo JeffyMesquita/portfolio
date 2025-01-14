@@ -32,7 +32,7 @@ export function Navbar() {
           <ul className="flex items-center justify-between max-sm:justify-around max-sm:text-sm">
             <li className="mx-1 rounded py-1 transition delay-100 duration-300 ease-in hover:bg-neutral-700">
               <a href="#servicos" className="px-2 hover:cursor-pointer">
-                Serviços
+                Minha Stack
               </a>
             </li>
             <li className="mx-1 rounded py-1 transition delay-100 duration-300 ease-in hover:bg-neutral-700">
