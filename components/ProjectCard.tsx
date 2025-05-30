@@ -24,6 +24,7 @@ export interface ProjectCardProps {
   image?: string;
   className?: string;
   side: '@LEFT' | '@RIGHT';
+  tags?: string[];
 }
 
 const categories = [
@@ -53,6 +54,127 @@ const categories = [
   },
 ];
 
+// Color map for tags
+const tagColors: Record<string, { bg: string; text: string; border: string }> =
+  {
+    React: {
+      bg: 'bg-cyan-900/60',
+      text: 'text-cyan-300',
+      border: 'border-cyan-700',
+    },
+    'Next.js': {
+      bg: 'bg-neutral-900/60',
+      text: 'text-white',
+      border: 'border-neutral-700',
+    },
+    TypeScript: {
+      bg: 'bg-blue-900/60',
+      text: 'text-blue-300',
+      border: 'border-blue-700',
+    },
+    JavaScript: {
+      bg: 'bg-yellow-900/60',
+      text: 'text-yellow-200',
+      border: 'border-yellow-700',
+    },
+    Node: {
+      bg: 'bg-green-900/60',
+      text: 'text-green-300',
+      border: 'border-green-700',
+    },
+    'Node.js': {
+      bg: 'bg-green-900/60',
+      text: 'text-green-300',
+      border: 'border-green-700',
+    },
+    NestJS: {
+      bg: 'bg-pink-900/60',
+      text: 'text-pink-300',
+      border: 'border-pink-700',
+    },
+    PostgreSQL: {
+      bg: 'bg-blue-950/60',
+      text: 'text-blue-200',
+      border: 'border-blue-900',
+    },
+    MongoDB: {
+      bg: 'bg-emerald-900/60',
+      text: 'text-emerald-200',
+      border: 'border-emerald-700',
+    },
+    Docker: {
+      bg: 'bg-sky-900/60',
+      text: 'text-sky-200',
+      border: 'border-sky-700',
+    },
+    Tailwind: {
+      bg: 'bg-cyan-950/60',
+      text: 'text-cyan-200',
+      border: 'border-cyan-800',
+    },
+    'Tailwind CSS': {
+      bg: 'bg-cyan-950/60',
+      text: 'text-cyan-200',
+      border: 'border-cyan-800',
+    },
+    Jest: {
+      bg: 'bg-red-900/60',
+      text: 'text-red-200',
+      border: 'border-red-700',
+    },
+    Figma: {
+      bg: 'bg-pink-950/60',
+      text: 'text-pink-200',
+      border: 'border-pink-800',
+    },
+    Fastify: {
+      bg: 'bg-yellow-950/60',
+      text: 'text-yellow-100',
+      border: 'border-yellow-800',
+    },
+    'Styled Components': {
+      bg: 'bg-pink-900/60',
+      text: 'text-pink-200',
+      border: 'border-pink-700',
+    },
+    'Chakra UI': {
+      bg: 'bg-teal-900/60',
+      text: 'text-teal-200',
+      border: 'border-teal-700',
+    },
+    Shadcn: {
+      bg: 'bg-zinc-900/60',
+      text: 'text-zinc-200',
+      border: 'border-zinc-700',
+    },
+    'Shadcn/UI': {
+      bg: 'bg-zinc-900/60',
+      text: 'text-zinc-200',
+      border: 'border-zinc-700',
+    },
+    Tamagui: {
+      bg: 'bg-orange-900/60',
+      text: 'text-orange-200',
+      border: 'border-orange-700',
+    },
+    Git: {
+      bg: 'bg-orange-950/60',
+      text: 'text-orange-200',
+      border: 'border-orange-800',
+    },
+    GitHub: {
+      bg: 'bg-neutral-900/60',
+      text: 'text-neutral-200',
+      border: 'border-neutral-700',
+    },
+    // fallback
+    default: {
+      bg: 'bg-blue-900/60',
+      text: 'text-blue-200',
+      border: 'border-blue-900',
+    },
+  };
+
 export function ProjectCard({
   title = 'A simple project',
   category = '@FRONTEND',
@@ -64,6 +186,7 @@ export function ProjectCard({
   image,
   className,
   side = '@LEFT',
+  tags = [],
 }: ProjectCardProps) {
   console.log('side', side);
   const [showMore, setShowMore] = useState<boolean>(false);
@@ -152,7 +275,29 @@ export function ProjectCard({
         </div>
       </div>
 
-      <dl className="mt-6 flex justify-end gap-4 sm:gap-6">
+      {/* TAGS */}
+      {tags && tags.length > 0 && (
+        <div className="mb-4 flex flex-wrap justify-end gap-2 overflow-x-auto pb-1">
+          {tags.map((tag) => {
+            const color = tagColors[tag] || tagColors.default;
+            return (
+              <span
+                key={tag}
+                className={cn(
+                  'whitespace-nowrap rounded-full border px-3 py-1 text-xs font-medium shadow-sm',
+                  color.bg,
+                  color.text,
+                  color.border,
+                )}
+              >
+                {tag}
+              </span>
+            );
+          })}
+        </div>
+      )}
+
+      <dl className="mt-2 flex justify-end gap-4 sm:gap-6">
         <div className="flex flex-col">
           <dt className="text-sm font-medium text-neutral-200">Repositório</dt>
           {repositoryType === '@PUBLIC' && repositoryLink ? (

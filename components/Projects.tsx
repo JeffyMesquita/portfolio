@@ -76,6 +76,7 @@ export function Projects() {
                       : null
                   }
                   deployLink={project.deploy}
+                  tags={project.tags}
                 />
               </motion.div>
             );

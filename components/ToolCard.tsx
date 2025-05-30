@@ -1,43 +1,32 @@
-import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
-export interface ToolCardProps {
+interface ToolCardProps {
   title: string;
   description: string;
-  link: string;
   image: string;
-  className?: string;
+  link: string;
 }
 
-export function ToolCard({
-  title,
-  description,
-  link,
-  image,
-  className,
-}: ToolCardProps) {
+export function ToolCard({ title, description, image, link }: ToolCardProps) {
   return (
-    <a
-      href={link}
-      className={cn(
-        'my-6 block rounded-2xl border-[0.5px] border-neutral-500',
-        className,
-      )}
-      target="_blank"
-    >
-      <div className="w-full rounded-t-2xl bg-neutral-800 py-8 text-center">
-        <Image
-          className="mx-auto max-w-[80px] rounded-2xl brightness-90 contrast-125 transition delay-100 duration-300 ease-in hover:contrast-100"
-          src={image}
-          alt={title}
-          width={80}
-          height={80}
-        />
-      </div>
-      <div className="p-8 py-10">
-        <h1 className="mb-1 font-bold">{title}</h1>
-        <p className="text-neutral-400">{description}</p>
-      </div>
-    </a>
+    <Link href={link} target="_blank" rel="noopener noreferrer">
+      <motion.div
+        className="group flex h-24 items-center gap-4 rounded-lg bg-gray-800/50 p-4 transition-all hover:bg-gray-800/70"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        <div className="relative h-12 w-12 overflow-hidden rounded-lg">
+          <Image src={image} alt={title} fill className="object-contain p-1" />
+        </div>
+        <div className="flex-1">
+          <h3 className="font-medium text-white group-hover:text-blue-400">
+            {title}
+          </h3>
+          <p className="text-sm text-gray-400">{description}</p>
+        </div>
+      </motion.div>
+    </Link>
   );
 }
