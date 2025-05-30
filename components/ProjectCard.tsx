@@ -195,7 +195,7 @@ export function ProjectCard({
   return (
     <div
       className={cn(
-        'group relative flex min-h-[340px] transform flex-col justify-between overflow-hidden rounded-lg border border-neutral-50/40 p-4 transition-all duration-500 ease-linear hover:scale-105 hover:border-sky-600 hover:shadow-xl hover:shadow-sky-800 sm:w-full sm:p-6 md:max-w-[700px] lg:max-w-[450px] lg:p-8',
+        'group relative flex min-h-[340px] max-w-sm transform flex-col justify-between overflow-hidden rounded-lg border border-neutral-50/40 p-4 transition-all duration-500 ease-linear hover:scale-105 hover:border-sky-600 hover:shadow-xl hover:shadow-sky-800 sm:w-full sm:p-6 md:max-w-[700px] lg:max-w-[450px] lg:p-8',
         className,
       )}
     >
@@ -278,7 +278,7 @@ export function ProjectCard({
       {/* TAGS */}
       {tags && tags.length > 0 && (
         <div
-          className="mb-4 flex justify-end gap-2 overflow-x-auto overflow-y-hidden pb-2"
+          className="mb-4 flex w-full justify-end gap-2 overflow-x-auto overflow-y-hidden pb-2"
           style={{ maxHeight: 40 }}
         >
           <div className="flex gap-2" style={{ minWidth: '100%' }}>
