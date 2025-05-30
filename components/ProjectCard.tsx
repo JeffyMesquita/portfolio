@@ -195,7 +195,7 @@ export function ProjectCard({
   return (
     <div
       className={cn(
-        'group relative flex min-h-[250px] transform flex-col justify-between overflow-hidden rounded-lg border border-neutral-50/40 p-4 transition-all duration-500 ease-linear hover:scale-105 hover:border-sky-600 hover:shadow-xl hover:shadow-sky-800 sm:w-full sm:p-6 md:max-w-[700px] lg:max-w-[450px] lg:p-8',
+        'group relative flex min-h-[340px] transform flex-col justify-between overflow-hidden rounded-lg border border-neutral-50/40 p-4 transition-all duration-500 ease-linear hover:scale-105 hover:border-sky-600 hover:shadow-xl hover:shadow-sky-800 sm:w-full sm:p-6 md:max-w-[700px] lg:max-w-[450px] lg:p-8',
         className,
       )}
     >
@@ -277,23 +277,40 @@ export function ProjectCard({
 
       {/* TAGS */}
       {tags && tags.length > 0 && (
-        <div className="mb-4 flex flex-wrap justify-end gap-2 overflow-x-auto pb-1">
-          {tags.map((tag) => {
-            const color = tagColors[tag] || tagColors.default;
-            return (
-              <span
-                key={tag}
-                className={cn(
-                  'whitespace-nowrap rounded-full border px-3 py-1 text-xs font-medium shadow-sm',
-                  color.bg,
-                  color.text,
-                  color.border,
-                )}
-              >
-                {tag}
-              </span>
-            );
-          })}
+        <div
+          className="mb-4 flex justify-end gap-2 overflow-x-auto overflow-y-hidden pb-2"
+          style={{ maxHeight: 40 }}
+        >
+          <div className="flex gap-2" style={{ minWidth: '100%' }}>
+            {tags.map((tag) => {
+              const color = tagColors[tag] || tagColors.default;
+              return (
+                <span
+                  key={tag}
+                  className={cn(
+                    'flex w-auto items-center justify-center whitespace-nowrap rounded-full border px-3 py-1 text-center text-xs font-medium shadow-sm',
+                    color.bg,
+                    color.text,
+                    color.border,
+                  )}
+                >
+                  {tag}
+                </span>
+              );
+            })}
+          </div>
+          <style jsx>{`
+            div[style*='overflow-x-auto']::-webkit-scrollbar {
+              height: 6px;
+            }
+            div[style*='overflow-x-auto']::-webkit-scrollbar-thumb {
+              background: #334155;
+              border-radius: 8px;
+            }
+            div[style*='overflow-x-auto']::-webkit-scrollbar-track {
+              background: transparent;
+            }
+          `}</style>
         </div>
       )}
 
