@@ -11,7 +11,7 @@ export function Footer() {
           <div className="flex items-center justify-center gap-4 text-blue-700">
             <div className="relative">
               <Image
-                className="h-auto w-8 transform"
+                className="drop-shadow-[0_10px_8px_rgba(69, 4, 116, 0.4)] size-20 transform rounded-full border shadow-2xl shadow-blue-950 ring-2 ring-blue-800"
                 width={340}
                 height={200}
                 src="/me.png"

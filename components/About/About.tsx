@@ -1,18 +1,32 @@
-import { AnimatedSection } from '../AnimatedSection';
+import { motion } from 'framer-motion';
 import { SectionVariant } from '../SectionVariant';
 
 export function About() {
   return (
-    <AnimatedSection origin="left">
+    <motion.section
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       <SectionVariant variant spaceY>
         <div className="projects about mx-auto mt-14 w-10/12 max-md:mt-12 max-sm:mt-8">
-          <h1
+          <motion.h1
             id="sobre"
             className="mb-10 text-3xl font-bold md:text-4xl lg:text-5xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             Sobre mim
-          </h1>
-          <div>
+          </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <p className="text-balance text-lg sm:text-xl md:text-xl lg:text-xl xl:text-2xl">
               Sou formado em Sistemas de Informação e recentemente concluí uma
               pós-graduação em Engenharia de Software, o que fortaleceu ainda
@@ -29,9 +43,9 @@ export function About() {
               Jest, garantindo um workflow fluido e alinhado às melhores
               práticas do mercado.
             </p>
-          </div>
+          </motion.div>
         </div>
       </SectionVariant>
-    </AnimatedSection>
+    </motion.section>
   );
 }

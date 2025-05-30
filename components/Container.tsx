@@ -2,17 +2,24 @@ import Image from 'next/image';
 import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
 import { GrInstagram } from 'react-icons/gr';
 import { SectionVariant } from './SectionVariant';
-import { SplashEffect } from './SplashEffect';
+import { TechParticles } from './TechParticles';
+import { motion } from 'framer-motion';
 
 export function Container() {
   return (
     <SectionVariant spaceY>
       <section className="whoiam relative mx-auto w-10/12 pt-4 lg:pt-16">
-        <div className="flex flex-col items-center justify-between md:flex-row-reverse">
-          <div className="relative flex items-end justify-end max-md:pt-4">
+        <TechParticles />
+        <motion.div
+          className="flex flex-col items-center justify-between md:flex-row-reverse"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="flex items-end justify-end max-md:pt-4">
             <div className="">
               <Image
-                className="size-96 rounded-full shadow-2xl shadow-blue-950 drop-shadow-[0_10px_8px_rgba(30,58,138,0.4)]"
+                className="drop-shadow-[0_10px_8px_rgba(63, 4, 111, 0.4)] size-96 rounded-full shadow-2xl shadow-blue-950 ring-2 ring-blue-800"
                 width={340}
                 height={200}
                 src="/me.png"
@@ -20,26 +27,49 @@ export function Container() {
                 loading="lazy"
               />
             </div>
-            <SplashEffect />
           </div>
-          <div className="mt-5 p-4 pl-0 sm:mt-20">
+          <motion.div
+            className="mt-5 p-4 pl-0 sm:mt-20"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <h4 className="invisible -mt-8 h-0.5" id="quemsou">
               Quem sou?
             </h4>
-            <p className="mt-8 text-xl sm:text-2xl md:text-xl lg:text-2xl xl:text-3xl">
+            <motion.p
+              className="mt-8 text-xl sm:text-2xl md:text-xl lg:text-2xl xl:text-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               Hello!
-            </p>
-            <h1>
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
               Meu nome é{' '}
               <strong className="text-blue-700">Jeferson Mesquita</strong>
               <p className="text-xl sm:text-2xl md:text-xl lg:text-2xl xl:text-3xl">
                 Sou Desenvolvedor Fullstack
               </p>
-            </h1>
-            <p className="text-base sm:text-xl md:text-base lg:pt-6 lg:text-xl xl:text-2xl">
+            </motion.h1>
+            <motion.p
+              className="text-base sm:text-xl md:text-base lg:pt-6 lg:text-xl xl:text-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
               apaixonado por tecnologia e inovação.
-            </p>
-            <div className="mt-6 flex items-center md:mt-14">
+            </motion.p>
+            <motion.div
+              className="mt-6 flex items-center md:mt-14"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1 }}
+            >
               <ul className="my-4 mr-6 flex items-center space-x-2 sm:space-x-5">
                 <li>
                   <a
@@ -78,9 +108,9 @@ export function Container() {
               >
                 E-mail
               </a>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
     </SectionVariant>
   );

@@ -6,7 +6,7 @@ import { SiExpo, SiNestjs, SiTypescript, SiJavascript } from 'react-icons/si';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { SectionVariant } from './SectionVariant';
 import { IconType } from 'react-icons';
-import { AnimatedElement } from './AnimatedElement';
+import { motion } from 'framer-motion';
 
 interface ServiceInfo {
   title: string;
@@ -105,21 +105,42 @@ const services: ServiceInfo[] = [
 export function Services() {
   return (
     <SectionVariant spaceY>
-      <section className="mx-auto mt-14 w-10/12 max-md:mt-12 max-sm:mt-8">
-        <h1
+      <motion.section
+        className="mx-auto mt-14 w-10/12 max-md:mt-12 max-sm:mt-8"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.h1
           id="servicos"
           className="mb-10 text-3xl font-bold md:text-4xl lg:text-5xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
           Minha Stack
-        </h1>
+        </motion.h1>
         <div className="flex flex-wrap justify-center gap-7">
           {services.map((service, index) => (
-            <AnimatedElement
+            <motion.div
               key={index}
-              origin={index % 2 === 0 ? 'left' : 'right'}
+              initial={{
+                opacity: 0,
+                x: index % 2 === 0 ? -100 : 100,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
             >
               <ServiceCard
-                key={index}
                 title={service.title}
                 icon={<service.icon size={50} className={service.iconColor} />}
                 shortDescription={service.shortDescription}
@@ -128,10 +149,10 @@ export function Services() {
                 linkText={service.linkText}
                 effectColor={service.effectColor}
               />
-            </AnimatedElement>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </SectionVariant>
   );
 }

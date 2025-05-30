@@ -10,7 +10,6 @@ import Projects from '@/components/Projects';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Services } from '@/components/Services';
 import { Tools } from '@/components/Tools';
-import Script from 'next/script';
 
 export default function Home() {
   return (
@@ -26,8 +25,6 @@ export default function Home() {
         <Contact />
         <Footer />
       </main>
-      <Script src="https://unpkg.com/scrollreveal"></Script>
-      <Script src="/scrollReveal.js"></Script>
       <ScrollToTop />
     </>
   );
