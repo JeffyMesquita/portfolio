@@ -26,14 +26,14 @@ const experiences: Experience[] = [
   {
     title: 'DevOps & Infraestrutura',
     description:
-      'Configuração de ambientes de desenvolvimento, CI/CD, e deploy de aplicações em diferentes plataformas cloud.',
+      'Conhecimentos básicos em containerização com Docker, versionamento com Git e deploy em plataformas como Vercel. Estou aprendendo sobre CI/CD e práticas de DevOps.',
     technologies: ['Docker', 'Git', 'GitHub Actions', 'Vercel'],
     category: 'devops',
   },
   {
     title: 'Arquitetura de Software',
     description:
-      'Design de sistemas escaláveis, padrões de projeto, e boas práticas de desenvolvimento como Clean Code e SOLID.',
+      'Estudando conceitos de arquitetura limpa, padrões de projeto e princípios SOLID. Aplicando boas práticas de Clean Code nos projetos que desenvolvo.',
     technologies: [
       'DDD',
       'Clean Architecture',
