@@ -188,7 +188,6 @@ export function ProjectCard({
   side = '@LEFT',
   tags = [],
 }: ProjectCardProps) {
-  console.log('side', side);
   const [showMore, setShowMore] = useState<boolean>(false);
   const categoryData = categories.find((cat) => cat.name === category);
 
