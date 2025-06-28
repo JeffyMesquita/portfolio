@@ -6,7 +6,6 @@ import { Container } from '@/components/Container';
 import { Education } from '@/components/Education/Education';
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
-import { OtherProjects } from '@/components/OtherProjects';
 import Projects from '@/components/Projects';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Services } from '@/components/Services';
@@ -25,7 +24,6 @@ export default function Home() {
         <Services />
         <Tools />
         <Projects />
-        <OtherProjects />
         <Contact />
         <Footer />
       </main>
