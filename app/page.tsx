@@ -4,6 +4,8 @@ import { Contact } from '@/components';
 import { About } from '@/components/About/About';
 import { Container } from '@/components/Container';
 import { Education } from '@/components/Education/Education';
+import { Expertise } from '@/components/Expertise';
+import { ProfessionalExperience } from '@/components/ProfessionalExperience';
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import Projects from '@/components/Projects';
@@ -20,6 +22,8 @@ export default function Home() {
         <Container />
         <About />
         <Education />
+        <Expertise />
+        <ProfessionalExperience />
         <Skills />
         <Services />
         <Tools />

@@ -1,4 +1,7 @@
+'use client';
+
 import { motion } from 'framer-motion';
+import { useMemo, useEffect, useState } from 'react';
 import {
   SiJavascript,
   SiTypescript,
@@ -49,8 +52,6 @@ const coreStack = [
   { Icon: SiNestjs, color: '#E0234E', size: 32 },
   { Icon: SiTailwindcss, color: '#06B6D4', size: 32 },
   { Icon: SiPostgresql, color: '#4169E1', size: 32 },
-  { Icon: SiTailwindcss, color: '#06B6D4', size: 32 },
-  { Icon: SiPostgresql, color: '#4169E1', size: 32 },
   { Icon: SiDocker, color: '#2496ED', size: 32 },
   { Icon: SiFirebase, color: '#FFCA28', size: 32 },
   { Icon: SiVercel, color: '#000000', size: 32 },
@@ -70,16 +71,12 @@ const otherTechIcons = [
 
   // Backend
   { Icon: SiExpress, color: '#000000' },
-  { Icon: SiNestjs, color: '#E0234E' },
   { Icon: SiMongodb, color: '#47A248' },
   { Icon: SiPrisma, color: '#2D3748' },
   { Icon: SiGraphql, color: '#E10098' },
   { Icon: SiApollographql, color: '#311C87' },
 
   // Cloud & DevOps
-  { Icon: SiDocker, color: '#2496ED' },
-  { Icon: SiFirebase, color: '#FFCA28' },
-  { Icon: SiVercel, color: '#000000' },
   { Icon: SiNetlify, color: '#00C7B7' },
   { Icon: SiHeroku, color: '#430098' },
 
@@ -99,84 +96,226 @@ const otherTechIcons = [
   { Icon: SiPostman, color: '#FF6C37' },
 ];
 
+interface ParticleConfig {
+  id: string;
+  Icon: typeof SiTypescript;
+  color: string;
+  size: number;
+  left: number;
+  top: number;
+  opacity: number;
+  duration: number;
+  delay: number;
+}
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return isMobile;
+}
+
+function useReducedMotion() {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setReducedMotion(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  return reducedMotion;
+}
+
 export function TechParticles() {
+  const isMobile = useIsMobile();
+  const reducedMotion = useReducedMotion();
+
+  // Fixar configurações de partículas com useMemo para evitar recálculos
+  // Gerar conjunto fixo de partículas com IDs únicos e estáveis
+  const coreParticles = useMemo<ParticleConfig[]>(() => {
+    return coreStack.map((tech, i) => ({
+      id: `core-${i}-${tech.color}`,
+      Icon: tech.Icon,
+      color: tech.color,
+      size: tech.size,
+      left: (i * 100) / coreStack.length,
+      top: Math.random() * 50,
+      opacity: 0.8,
+      duration: 3 + Math.random() * 2,
+      delay: i * 0.2,
+    }));
+  }, []);
+
+  // Gerar conjunto fixo de 34 partículas com IDs únicos e estáveis
+  // Renderizar apenas as primeiras N baseado em isMobile
+  const allOtherParticles = useMemo<ParticleConfig[]>(() => {
+    // Usar um seed fixo para garantir que as partículas sejam sempre as mesmas
+    const seed = 12345;
+    const seededRandom = (index: number) => {
+      const x = Math.sin((seed + index) * 12.9898) * 10000;
+      return x - Math.floor(x);
+    };
+
+    return Array.from({ length: 34 }, (_, i) => {
+      const randomValue = seededRandom(i);
+      const iconIndex = Math.floor(randomValue * otherTechIcons.length);
+      const randomIcon = otherTechIcons[iconIndex];
+
+      // Gerar ID único baseado nas propriedades da partícula
+      const size = Math.floor(seededRandom(i + 100) * (28 - 16) + 16);
+      const left = seededRandom(i + 200) * 100;
+      const top = seededRandom(i + 300) * 100;
+      const opacity = seededRandom(i + 400) * (0.6 - 0.3) + 0.3;
+      const duration = 3 + seededRandom(i + 500) * 2;
+
+      return {
+        id: `other-${i}-${randomIcon.color}-${size}-${Math.floor(left)}-${Math.floor(top)}`,
+        Icon: randomIcon.Icon,
+        color: randomIcon.color,
+        size,
+        left,
+        top,
+        opacity,
+        duration,
+        delay: i * 0.2,
+      };
+    });
+  }, []);
+
+  // Filtrar partículas baseado em isMobile, mas manter IDs estáveis
+  const otherParticles = useMemo(() => {
+    const particleCount = isMobile ? 15 : 34;
+    return allOtherParticles.slice(0, particleCount);
+  }, [isMobile, allOtherParticles]);
+
+  // Animações simplificadas para mobile
+  const getAnimationProps = (particle: ParticleConfig) => {
+    if (reducedMotion) {
+      return {
+        animate: { opacity: particle.opacity },
+        transition: { duration: 0.5 },
+      };
+    }
+
+    if (isMobile) {
+      // Mobile: apenas movimento vertical suave, sem rotação
+      return {
+        animate: {
+          y: [0, -20, 0],
+          opacity: particle.opacity,
+        },
+        transition: {
+          duration: particle.duration,
+          repeat: Infinity,
+          delay: particle.delay,
+          ease: 'easeInOut',
+        },
+      };
+    }
+
+    // Desktop: animação completa
+    return {
+      animate: {
+        y: [0, -30, 0],
+        rotate: [0, 360],
+        scale: [1, 1.2, 1],
+      },
+      transition: {
+        duration: particle.duration,
+        repeat: Infinity,
+        delay: particle.delay,
+        ease: 'easeInOut',
+      },
+    };
+  };
+
+  const getFilterStyle = () => {
+    if (isMobile || reducedMotion) {
+      return {}; // Sem filtros no mobile para melhor performance
+    }
+    return {
+      filter: 'drop-shadow(0 0 12px rgba(0,0,0,0.4))',
+    };
+  };
+
+  const getOtherFilterStyle = () => {
+    if (isMobile || reducedMotion) {
+      return {};
+    }
+    return {
+      filter: 'drop-shadow(0 0 8px rgba(0,0,0,0.3))',
+    };
+  };
+
   return (
     <motion.div
       className="pointer-events-none absolute inset-0 z-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
+      style={{ willChange: 'transform' }}
     >
-      {/* Core Stack Particles (sempre presentes) */}
-      {coreStack.map((tech, i) => (
+      {/* Core Stack Particles */}
+      {coreParticles.map((particle) => (
         <motion.div
-          key={`core-${i}`}
+          key={particle.id}
           className="absolute"
           style={{
-            left: `${(i * 100) / coreStack.length}%`,
-            top: `${Math.random() * 50}%`,
-            opacity: 0.8,
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
+            opacity: particle.opacity,
+            willChange: 'transform',
           }}
-          animate={{
-            y: [0, -30, 0],
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            delay: i * 0.2,
-            ease: 'easeInOut',
-          }}
+          {...getAnimationProps(particle)}
         >
-          <tech.Icon
-            size={tech.size}
+          <particle.Icon
+            size={particle.size}
             style={{
-              color: tech.color,
-              filter: 'drop-shadow(0 0 12px rgba(0,0,0,0.4))',
+              color: particle.color,
+              ...getFilterStyle(),
             }}
           />
         </motion.div>
       ))}
 
-      {/* Outras partículas aleatórias */}
-      {[...Array(34)].map((_, i) => {
-        const randomIcon =
-          otherTechIcons[Math.floor(Math.random() * otherTechIcons.length)];
-        const size = Math.floor(Math.random() * (28 - 16) + 16);
-        const opacity = Math.random() * (0.6 - 0.3) + 0.3;
-
-        return (
-          <motion.div
-            key={`other-${i}`}
-            className="absolute"
+      {/* Outras partículas */}
+      {otherParticles.map((particle) => (
+        <motion.div
+          key={particle.id}
+          className="absolute"
+          style={{
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
+            opacity: particle.opacity,
+            willChange: 'transform',
+          }}
+          {...getAnimationProps(particle)}
+        >
+          <particle.Icon
+            size={particle.size}
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              opacity: opacity,
+              color: particle.color,
+              ...getOtherFilterStyle(),
             }}
-            animate={{
-              y: [0, -30, 0],
-              rotate: [0, 360],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: i * 0.2,
-              ease: 'easeInOut',
-            }}
-          >
-            <randomIcon.Icon
-              size={size}
-              style={{
-                color: randomIcon.color,
-                filter: 'drop-shadow(0 0 8px rgba(0,0,0,0.3))',
-              }}
-            />
-          </motion.div>
-        );
-      })}
+          />
+        </motion.div>
+      ))}
     </motion.div>
   );
 }

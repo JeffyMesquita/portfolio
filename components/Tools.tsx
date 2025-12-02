@@ -43,7 +43,7 @@ export function Tools() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <ToolCard
+          <ToolCard
                 title={tool.title}
                 description={tool.description}
                 image={tool.image}

@@ -60,20 +60,20 @@ function OtherProjects() {
                 }}
               >
                 <ProjectCard
-                  title={project.title}
-                  side={side}
-                  shortDescription={project.subtitle}
-                  moreDescription={project.description}
-                  category={project.stack}
-                  image={project.image}
-                  repositoryType={project.repository.type}
-                  repositoryLink={
-                    project.repository.type === '@PUBLIC'
-                      ? project.repository.link
-                      : null
-                  }
-                  deployLink={project.deploy}
-                />
+                title={project.title}
+                side={side}
+                shortDescription={project.subtitle}
+                moreDescription={project.description}
+                category={project.stack}
+                image={project.image}
+                repositoryType={project.repository.type}
+                repositoryLink={
+                  project.repository.type === '@PUBLIC'
+                    ? project.repository.link
+                    : null
+                }
+                deployLink={project.deploy}
+              />
               </motion.div>
             );
           })}
