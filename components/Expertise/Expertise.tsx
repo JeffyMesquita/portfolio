@@ -77,16 +77,17 @@ export function Expertise() {
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-gray-800/70"
+                className="flex w-full items-center justify-between gap-4 p-4 text-left transition-colors hover:bg-gray-800/70 sm:p-6"
               >
-                <h2 className="text-xl font-semibold text-blue-400 md:text-2xl">
+                <h2 className="flex-1 text-base font-semibold text-blue-400 sm:text-lg md:text-xl lg:text-2xl">
                   {item.title}
                 </h2>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
+                  className="flex-shrink-0"
                 >
-                  <FaChevronDown className="ml-4 text-gray-400" />
+                  <FaChevronDown className="text-gray-400" />
                 </motion.div>
               </button>
               <AnimatePresence>
@@ -98,8 +99,10 @@ export function Expertise() {
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-300">{item.description}</p>
+                    <div className="px-4 pb-4 sm:px-6 sm:pb-6">
+                      <p className="text-sm text-gray-300 sm:text-base">
+                        {item.description}
+                      </p>
                     </div>
                   </motion.div>
                 )}

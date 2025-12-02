@@ -28,30 +28,32 @@ export function ProfessionalExperience() {
           {PROFESSIONAL_EXPERIENCES.map((experience, index) => (
             <motion.div
               key={`${experience.company}-${experience.period}`}
-              className="relative rounded-lg bg-gray-800/50 p-6"
+              className="relative rounded-lg bg-gray-800/50 p-4 sm:p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
             >
-              <div className="absolute -left-3 top-6 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600">
-                <FaBriefcase className="text-white" />
+              <div className="absolute -left-2 top-4 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 sm:-left-3 sm:top-6 sm:h-6 sm:w-6">
+                <FaBriefcase className="text-xs text-white sm:text-sm" />
               </div>
-              <div className="ml-4">
-                <h2 className="mb-2 text-xl font-semibold text-blue-400">
+              <div className="ml-3 sm:ml-4">
+                <h2 className="mb-2 text-base font-semibold text-blue-400 sm:text-lg md:text-xl">
                   {experience.title}
                 </h2>
-                <h3 className="mb-2 text-lg font-medium">
+                <h3 className="mb-2 text-sm font-medium sm:text-base md:text-lg">
                   {experience.company}
                   {experience.location && ` – ${experience.location}`}
                 </h3>
-                <span className="mb-4 block text-sm text-gray-400">
+                <span className="mb-3 block text-xs text-gray-400 sm:mb-4 sm:text-sm">
                   {experience.period}
                 </span>
-                <p className="mb-4 text-gray-300">{experience.description}</p>
-                <ul className="list-inside space-y-2">
+                <p className="mb-3 text-sm text-gray-300 sm:mb-4 sm:text-base">
+                  {experience.description}
+                </p>
+                <ul className="list-inside space-y-1.5 sm:space-y-2">
                   {experience.responsibilities.map((responsibility, idx) => (
-                    <li key={idx} className="text-gray-300">
+                    <li key={idx} className="text-xs text-gray-300 sm:text-sm">
                       <span className="text-blue-400">•</span> {responsibility}
                     </li>
                   ))}

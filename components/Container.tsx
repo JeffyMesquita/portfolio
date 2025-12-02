@@ -19,9 +19,9 @@ export function Container() {
           <div className="flex items-end justify-end max-md:pt-4">
             <div className="">
               <Image
-                className="drop-shadow-[0_10px_8px_rgba(63, 4, 111, 0.4)] size-96 rounded-full shadow-2xl shadow-blue-950 ring-2 ring-blue-800"
-                width={340}
-                height={200}
+                className="drop-shadow-[0_10px_8px_rgba(63, 4, 111, 0.4)] h-48 w-48 rounded-full shadow-2xl shadow-blue-950 ring-2 ring-blue-800 sm:h-64 sm:w-64 md:h-80 md:w-80 lg:h-96 lg:w-96"
+                width={384}
+                height={384}
                 src="/me.png"
                 alt="Hero Image"
                 loading="lazy"
