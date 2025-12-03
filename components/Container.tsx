@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
 import { GrInstagram } from 'react-icons/gr';
+import { FiDownload } from 'react-icons/fi';
 import { SectionVariant } from './SectionVariant';
 import { TechParticles } from './TechParticles';
 import { motion } from 'framer-motion';
+import { RESUME_PDF_LINK, RESUME_DOCX_LINK } from '@/constants';
 
 export function Container() {
   return (
@@ -102,12 +104,34 @@ export function Container() {
                   </a>
                 </li>
               </ul>
-              <a
-                href="mailto:je_2742@hotmail.com"
-                className="whitespace-nowrap rounded-2xl border-[0.5px] border-blue-700 bg-blue-950/60 px-4 py-[5px] transition duration-150 ease-in hover:bg-blue-700 hover:text-white"
-              >
-                E-mail
-              </a>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <a
+                  href="mailto:je_2742@hotmail.com"
+                  className="whitespace-nowrap rounded-2xl border-[0.5px] border-blue-700 bg-blue-950/60 px-4 py-[5px] transition duration-150 ease-in hover:bg-blue-700 hover:text-white"
+                >
+                  E-mail
+                </a>
+                <a
+                  href={RESUME_PDF_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 whitespace-nowrap rounded-xl border-[0.5px] border-red-600 bg-red-950/40 px-3 py-[5px] text-sm transition duration-150 ease-in hover:bg-red-700 hover:text-white sm:gap-2 sm:px-4"
+                  aria-label="Baixar Currículo em PDF"
+                >
+                  <FiDownload size={16} />
+                  <span>PDF</span>
+                </a>
+                <a
+                  href={RESUME_DOCX_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 whitespace-nowrap rounded-xl border-[0.5px] border-green-600 bg-green-950/40 px-3 py-[5px] text-sm transition duration-150 ease-in hover:bg-green-700 hover:text-white sm:gap-2 sm:px-4"
+                  aria-label="Baixar Currículo em DOCX"
+                >
+                  <FiDownload size={16} />
+                  <span>DOCX</span>
+                </a>
+              </div>
             </motion.div>
           </motion.div>
         </motion.div>
