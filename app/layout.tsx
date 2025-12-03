@@ -291,7 +291,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt=br" className="scrollbar-hide">
+    <html lang="pt=br">
       <head>
         <script
           async
@@ -299,7 +299,7 @@ export default function RootLayout({
         ></script>
       </head>
       <body
-        className={`${space_mono.className} scrollbar-hide max-w-screen h-screen w-screen overflow-x-hidden`}
+        className={`${space_mono.className} max-w-screen h-screen w-screen overflow-x-hidden`}
       >
         <Providers>{children}</Providers>
         <Analytics />

@@ -17,7 +17,7 @@ import { Tools } from '@/components/Tools';
 export default function Home() {
   return (
     <>
-      <main className="scrollbar-hide h-full w-full">
+      <main className="h-full w-full">
         <Navbar />
         <Container />
         <About />
