@@ -9,4 +9,4 @@ export const RESUME_PDF_LINK =
   'https://drive.google.com/file/d/1E-9CgyZWHhaBpqJ-nPox9v-ui5to911J/view?usp=sharing';
 
 export const RESUME_DOCX_LINK =
-  'https://docs.google.com/document/d/1J4K0gJx-yHePiCERh9y1hL0TZirpfW6Y/view?usp=sharing';
+  'https://docs.google.com/document/d/1J4K0gJx-yHePiCERh9y1hL0TZirpfW6Y/edit?usp=sharing&ouid=111367874102874212225&rtpof=true&sd=true';
