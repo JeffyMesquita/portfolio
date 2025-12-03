@@ -275,7 +275,7 @@ export function TechParticles() {
       {coreParticles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute"
+          className="absolute z-0"
           style={{
             left: `${particle.left}%`,
             top: `${particle.top}%`,
@@ -298,7 +298,7 @@ export function TechParticles() {
       {otherParticles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute"
+          className="absolute z-0"
           style={{
             left: `${particle.left}%`,
             top: `${particle.top}%`,

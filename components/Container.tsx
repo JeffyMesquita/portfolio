@@ -10,7 +10,7 @@ import { RESUME_PDF_LINK, RESUME_DOCX_LINK } from '@/constants';
 export function Container() {
   return (
     <SectionVariant spaceY>
-      <section className="whoiam relative mx-auto w-10/12 pt-4 lg:pt-16">
+      <section className="whoiam relative mx-auto w-10/12 overflow-x-hidden pt-4 lg:pt-16">
         <TechParticles />
         <motion.div
           className="flex flex-col items-center justify-between md:flex-row-reverse"
@@ -31,7 +31,7 @@ export function Container() {
             </div>
           </div>
           <motion.div
-            className="mt-5 p-4 pl-0 sm:mt-20"
+            className="relative z-10 mt-5 w-full p-2 pl-0 sm:mt-20 sm:p-4 md:w-auto"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -67,12 +67,12 @@ export function Container() {
               apaixonado por tecnologia e inovação.
             </motion.p>
             <motion.div
-              className="mt-6 flex items-center md:mt-14"
+              className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center md:mt-14"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
             >
-              <ul className="my-4 mr-6 flex items-center space-x-2 sm:space-x-5">
+              <ul className="flex items-center space-x-2 sm:space-x-5">
                 <li>
                   <a
                     href="https://github.com/JeffyMesquita"
@@ -107,7 +107,7 @@ export function Container() {
               <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <a
                   href="mailto:je_2742@hotmail.com"
-                  className="whitespace-nowrap rounded-2xl border-[0.5px] border-blue-700 bg-blue-950/60 px-4 py-[5px] transition duration-150 ease-in hover:bg-blue-700 hover:text-white"
+                  className="whitespace-nowrap rounded-2xl border-[0.5px] border-blue-700 bg-blue-950/60 px-3 py-[5px] text-sm transition duration-150 ease-in hover:bg-blue-700 hover:text-white sm:px-4 sm:text-base"
                 >
                   E-mail
                 </a>
@@ -115,20 +115,20 @@ export function Container() {
                   href={RESUME_PDF_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 whitespace-nowrap rounded-xl border-[0.5px] border-red-600 bg-red-950/40 px-3 py-[5px] text-sm transition duration-150 ease-in hover:bg-red-700 hover:text-white sm:gap-2 sm:px-4"
+                  className="flex items-center gap-1.5 whitespace-nowrap rounded-xl border-[0.5px] border-red-600 bg-red-950/40 px-2.5 py-[5px] text-xs transition duration-150 ease-in hover:bg-red-700 hover:text-white sm:gap-2 sm:px-3 sm:text-sm"
                   aria-label="Baixar Currículo em PDF"
                 >
-                  <FiDownload size={16} />
+                  <FiDownload className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   <span>PDF</span>
                 </a>
                 <a
                   href={RESUME_DOCX_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 whitespace-nowrap rounded-xl border-[0.5px] border-green-600 bg-green-950/40 px-3 py-[5px] text-sm transition duration-150 ease-in hover:bg-green-700 hover:text-white sm:gap-2 sm:px-4"
+                  className="flex items-center gap-1.5 whitespace-nowrap rounded-xl border-[0.5px] border-green-600 bg-green-950/40 px-2.5 py-[5px] text-xs transition duration-150 ease-in hover:bg-green-700 hover:text-white sm:gap-2 sm:px-3 sm:text-sm"
                   aria-label="Baixar Currículo em DOCX"
                 >
-                  <FiDownload size={16} />
+                  <FiDownload className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   <span>DOCX</span>
                 </a>
               </div>
